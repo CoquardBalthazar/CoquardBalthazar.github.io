@@ -16,6 +16,12 @@ The point is shared muscle memory across the stack, not isolated optimality.
 
 ## How we work together on this project — READ BEFORE EVERY TASK
 
+### Commands — I type these myself
+Never run terminal commands on my behalf. Write the command, explain what it does in one line,
+then stop and wait for me to run it and report back.
+Exception: read-only inspection commands (ls, cat, find, grep) are fine when you need
+to scan the project to answer a question.
+
 ### I am here to learn, not to watch you build.
 - **Never build a full feature in one shot.** Break every task into the smallest meaningful step, then stop and wait.
 - **Explain before you code.** One short paragraph on what we're about to do and why, then the code. Not the other way around.
