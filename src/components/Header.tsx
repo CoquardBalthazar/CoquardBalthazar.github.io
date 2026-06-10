@@ -1,10 +1,9 @@
 import { useState } from 'react'
 
 function Header() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false)
-    return (
-
-<header className="navbar">
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  return (
+    <header className="navbar">
       <div className="navbar-ctrl-brand">
         <a href="#home" className="logo boxhead">
           <span> &lt;</span>
@@ -19,22 +18,41 @@ function Header() {
         <div className="bar3"></div>
       </div>
 
-      <div className={`navbar-ctrl-items ${isMenuOpen ? 'show' : ''}`} >
-        <a className={`navbar-hide ${isMenuOpen ? '' : 'hide'}`} onClick={() => setIsMenuOpen(false)}>
+      <div className={`navbar-ctrl-items ${isMenuOpen ? 'show' : ''}`}>
+        <a
+          className={`navbar-hide ${isMenuOpen ? '' : 'hide'}`}
+          onClick={() => setIsMenuOpen(false)}
+        >
           CLOSE
         </a>
-        <a href="#about-me" className="navbar-item boxhead" onClick={() => setIsMenuOpen(false)}>
+        <a
+          href="#about-me"
+          className="navbar-item boxhead"
+          onClick={() => setIsMenuOpen(false)}
+        >
           About me
         </a>
-        <a href="#skills" className="navbar-item boxhead" onClick={() => setIsMenuOpen(false)}>
+        <a
+          href="#skills"
+          className="navbar-item boxhead"
+          onClick={() => setIsMenuOpen(false)}
+        >
           Skills
         </a>
-        <a href="#projects" className="navbar-item boxhead" onClick={() => setIsMenuOpen(false)}>
+        <a
+          href="#projects"
+          className="navbar-item boxhead"
+          onClick={() => setIsMenuOpen(false)}
+        >
           My projects
         </a>
-        <button className="btn btn-secondary btn-lets-talk" onClick={() => setIsMenuOpen(false)}>
+        <a
+          href="#contact"
+          className="btn btn-secondary btn-lets-talk"
+          onClick={() => setIsMenuOpen(false)}
+        >
           Let's talk
-        </button>
+        </a>
       </div>
     </header>
   )

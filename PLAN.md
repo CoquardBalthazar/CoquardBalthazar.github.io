@@ -9,11 +9,11 @@
 
 The portfolio is being rebuilt as the **first rung of a 3-project learning ladder** that shares stack across all three projects. The point is shared muscle memory, not isolated optimality.
 
-| Project | Role in the ladder | Stack |
-|---|---|---|
-| **Portfolio** (this repo) | Sandbox. Learn the full Vite + React + GitHub Actions → GitHub Pages pipeline on a low-stakes project. | React + Vite + GH Actions |
-| **Bank tracker** (`.private-ofxToCSV.private`) | Step up. Same frontend stack + file parsing logic (OFX/TSV → CSV, 2 banks done). | React + Vite + parser layer |
-| **CREA** | The main project. Full stack: React + Vite frontend, Node + Express backend, PostgreSQL, JWT auth, Docker + GH Actions CI/CD → Railway/Render. Not live yet. | Full-stack |
+| Project                                        | Role in the ladder                                                                                                                                           | Stack                       |
+| ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------- |
+| **Portfolio** (this repo)                      | Sandbox. Learn the full Vite + React + GitHub Actions → GitHub Pages pipeline on a low-stakes project.                                                       | React + Vite + GH Actions   |
+| **Bank tracker** (`.private-ofxToCSV.private`) | Step up. Same frontend stack + file parsing logic (OFX/TSV → CSV, 2 banks done).                                                                             | React + Vite + parser layer |
+| **CREA**                                       | The main project. Full stack: React + Vite frontend, Node + Express backend, PostgreSQL, JWT auth, Docker + GH Actions CI/CD → Railway/Render. Not live yet. | Full-stack                  |
 
 The portfolio also serves as the public-facing artifact for the Munich junior SE job search. Differentiators to surface: CREA as featured project (once live), hackathon 2nd place, an inline Three.js / WebXR demo as the start of an XR learning path.
 
@@ -36,6 +36,7 @@ The portfolio also serves as the public-facing artifact for the Munich junior SE
 Total estimate: **~13–19h**, realistic 4–6 evenings.
 
 ### Phase 1 — Migration scaffold (3–4h)
+
 Goal: get a Vite + React project deployed via GitHub Actions, visually identical to the current site.
 
 - [ ] `npm create vite@latest` (React, JS or TS matching CREA)
@@ -48,6 +49,7 @@ Goal: get a Vite + React project deployed via GitHub Actions, visually identical
 **Learning outcome:** full Vite → Actions → Pages loop, reusable for CREA.
 
 ### Phase 2 — Data-driven content (2–3h)
+
 Goal: project and hackathon lists driven by JSON, not JSX edits.
 
 - [ ] `data/projects.json` (schema below)
@@ -60,6 +62,7 @@ Goal: project and hackathon lists driven by JSON, not JSX edits.
 **Learning outcome:** React state, list rendering, filtering — directly reusable in CREA.
 
 ### Phase 3 — New content + skills section (3–4h)
+
 - [ ] Replace the 3 generic skill cards with a skills tile grid
   - Comfortable: Python, JavaScript, HTML/CSS, C++
   - Learning: Java, React, Node, PostgreSQL, Docker, Three.js
@@ -76,6 +79,7 @@ Goal: project and hackathon lists driven by JSON, not JSX edits.
 - [ ] Remove or ship the "COMING SOON" notes (multi-language, tablet responsiveness — stale since 2024)
 
 ### Phase 4 — Three.js inline demo (2–4h)
+
 - [ ] Add `@react-three/fiber` and `three`
 - [ ] One scene embedded as a section: rotating mesh or simple interactive geometry — even small reads as "exploring XR"
 - [ ] Treat as the start of the WebXR learning path, not the destination
@@ -83,11 +87,13 @@ Goal: project and hackathon lists driven by JSON, not JSX edits.
 **Learning outcome:** first contact with Three.js / r3f.
 
 ### Phase 5 — Mobile responsiveness (2–3h)
+
 - [ ] Breakpoint pass across all sections
 - [ ] Hamburger menu polish
 - [ ] Test on real device
 
 ### Phase 6 — Contact form working (1h)
+
 - [ ] Sign up for Formspree or EmailJS free tier
 - [ ] Wire up the existing form to the endpoint
 - [ ] Confirm a test message arrives
@@ -109,6 +115,7 @@ Quick win, ship before the site rebuild starts:
 ## 5. Data schemas
 
 ### `data/projects.json`
+
 ```json
 [
   {
@@ -126,6 +133,7 @@ Quick win, ship before the site rebuild starts:
 ```
 
 ### `data/hackathons.json`
+
 ```json
 [
   {
@@ -149,6 +157,7 @@ User will populate these later.
 ## 6. Known project inventory (as of 2026-06-04)
 
 ### Existing (already on the site)
+
 - Guess my Number (JS) — https://coquardbalthazar.github.io/guessMyNumber-js/
 - Pig Game (JS) — https://coquardbalthazar.github.io/pigGame-js/
 - Tic Tac Toe (Python)
@@ -157,6 +166,7 @@ User will populate these later.
 - Internal Approval App (MS Power Apps)
 
 ### New to add
+
 - **CREA** — accountability platform for small creator groups. React+Vite / Node+Express / PostgreSQL / JWT / Docker / GH Actions → Railway/Render. **Not live yet.**
 - **Bank tracker** — evolution of the OFX/TSV converter. 2 bank converters done + some logic written. In progress.
 - **C++ Vending Machine** — https://github.com/CoquardBalthazar/cpp_p1_vending_machine
@@ -164,6 +174,7 @@ User will populate these later.
 - **Java/Processing Pong + 3 features** (LMU course/personal) — https://github.com/CoquardBalthazar/LMU_BiP/tree/main
 
 ### Hackathons
+
 2 done. Including at least one 2nd place. Details to be added to `hackathons.json` by user.
 
 ---

@@ -1,21 +1,21 @@
 function Projects() {
   return (
-  <section id="projects">
+    <section id="projects">
       <div className="project-container font-light">
         <h2 className="project-title">## My projects</h2>
         <div className="project-cards">
           {/* Projects Left Column*/}
           <div className="project-column left">
             <div className="project-card card-left-tertiary" id="left-card1">
-              <span className="card-category highlight-box-shadow tertiary"
-                >Python</span
-              >
+              <span className="card-category highlight-box-shadow tertiary">
+                Python
+              </span>
               <h3 className="h3-card-title-2l">Converter OFX, TSV to CSV</h3>
             </div>
             <div className="project-card card-left-secondary" id="left-card2">
-              <span className="card-category highlight-box-shadow secondary"
-                >Javascript</span
-              >
+              <span className="card-category highlight-box-shadow secondary">
+                Javascript
+              </span>
               <h3 className="h3-card-title-1l">Pig game</h3>
 
               <a
@@ -29,27 +29,27 @@ function Projects() {
               </a>
             </div>
             <div className="project-card card-left-primary" id="left-card3">
-              <span className="card-category highlight-box-shadow primary"
-                >Microsoft Power Apps</span
-              >
+              <span className="card-category highlight-box-shadow primary">
+                Microsoft Power Apps
+              </span>
               <h3 className="h3-card-title-2l">Approval request App</h3>
             </div>
             <div className="project-card card-left-tertiary" id="left-card4">
-              <span className="card-category highlight-box-shadow tertiary"
-                >Python</span
-              >
+              <span className="card-category highlight-box-shadow tertiary">
+                Python
+              </span>
               <h3 className="h3-card-title-1l">Blackjack</h3>
             </div>
             <div className="project-card card-left-secondary" id="left-card5">
-              <span className="card-category highlight-box-shadow secondary"
-                >Javascript</span
-              >
+              <span className="card-category highlight-box-shadow secondary">
+                Javascript
+              </span>
               <h3 className="h3-card-title-1l">Guess my number</h3>
               <a
                 href="https://coquardbalthazar.github.io/guessMyNumber-js/"
                 target="_blank"
                 className="btn-play-link"
-                >
+              >
                 <div className="btn-play-container">
                   <div className="btn-play"></div>
                 </div>
@@ -72,27 +72,28 @@ function Projects() {
                 className="btn btn-project-discover"
               >
                 View code
-                </a>
+              </a>
             </div>
             <div className="project-card card-right-secondary" id="right-card2">
               <p className="project-description">
-                A 2-player game played in the browser. <br />The goal ? To be
-                the first to reach 100 by throwing the dice. Careful : if you
-                roll a 1, your current collected amount disappears !
+                A 2-player game played in the browser. <br />
+                The goal ? To be the first to reach 100 by throwing the dice.
+                Careful : if you roll a 1, your current collected amount
+                disappears !
               </p>
               <a
                 href="https://github.com/CoquardBalthazar/pigGame-js"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-project-discover"
-                >
+              >
                 View code
               </a>
             </div>
             <div className="project-card card-right-primary" id="right-card3">
               <p className="project-description">
-                A Microsoft Power Apps for internal approval request
-                processes.<br />
+                A Microsoft Power Apps for internal approval request processes.
+                <br />
                 Features : multi-language option, mandatory fields,
                 auto-complete option, ... HTTP request, JSON parsing, power
                 flow, up to the rejection or the approval.

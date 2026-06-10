@@ -55,22 +55,26 @@ function Contact() {
           <p className="email">balthazar.coquard@gmail.com</p>
           <div className="contact social-media-control">
             <a
-            href="https://www.linkedin.com/in/balthazar-coquard/"
+              href="https://www.linkedin.com/in/balthazar-coquard/"
               target="_blank"
               rel="noopener noreferrer"
-              className="fa fa-linkedin"></a>
+              className="fa fa-linkedin"
+            ></a>
             <a
               href="https://github.com/CoquardBalthazar"
               target="_blank"
               rel="noopener noreferrer"
               className="fa fa-github"
             ></a>
-            <a href="mailto:balthazar.coquard@gmail.com" className="fa fa-google"></a>
+            <a
+              href="mailto:balthazar.coquard@gmail.com"
+              className="fa fa-google"
+            ></a>
           </div>
         </div>
       </div>
     </section>
-)
+  )
 }
 
 export default Contact

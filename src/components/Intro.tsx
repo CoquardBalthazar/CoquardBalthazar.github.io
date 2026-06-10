@@ -27,7 +27,10 @@ function Intro() {
               rel="noopener noreferrer"
               className="fa fa-github"
             ></a>
-            <a href="mailto:balthazar.coquard@gmail.com" className="fa fa-google"></a>
+            <a
+              href="mailto:balthazar.coquard@gmail.com"
+              className="fa fa-google"
+            ></a>
           </div>
           <a
             href="/assets/Coquard-Balthazar-CV_de.pdf"

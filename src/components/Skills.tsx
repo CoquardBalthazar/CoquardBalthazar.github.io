@@ -1,6 +1,6 @@
 function Skills() {
   return (
-  <section id="skills">
+    <section id="skills">
       <div className="skill section-control">
         <div className="skill-bg light">
           <h2 className="section-title">## Skills</h2>
@@ -43,8 +43,8 @@ function Skills() {
               <p className="skill">
                 My marketing background combined with my curiosity led me to
                 computer science and design, where it met web development.
-                Currently following a Javascript className on Udemy, I now have a
-                strong foundation in JS, HTML and CSS.
+                Currently following a Javascript className on Udemy, I now have
+                a strong foundation in JS, HTML and CSS.
               </p>
             </div>
           </div>
@@ -69,7 +69,8 @@ function Skills() {
           </div>
         </div>
       </div>
-    </section>)
+    </section>
+  )
 }
 
 export default Skills

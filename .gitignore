@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+# Scratch / Draft / other personal resources that are irrelevant for build
+_scratch/

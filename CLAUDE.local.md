@@ -1,10 +1,12 @@
 # Local context — not committed
 
 ## Paths
-- Portfolio repo: ~/projects/_public/portfolio/CoquardBalthazar.github.io  (adjust to your actual path)
-- CREA repo: ~/projects/_public/portfolio/crea/
+
+- Portfolio repo: ~/projects/\_public/portfolio/CoquardBalthazar.github.io (adjust to your actual path)
+- CREA repo: ~/projects/\_public/portfolio/crea/
 
 ## Current status
+
 - [x] phase 0 : adding claude context
 - [~] phase 1 : migration scaffold — IN PROGRESS, see "Detailed context" below
 - branch : refactor2026/phase1-migration-scafold
@@ -13,11 +15,13 @@
 ## Detailed context (for next agent / after break)
 
 ### Where we are in Phase 1
+
 Vite + React + TS scaffold is fully merged into the repo root (no more `vite-tmp/`).
 `npm run dev` works and the site renders close to the original, section by section,
 as React components.
 
 ### Repo state
+
 - `package.json` rebuilt from the Vite `react-ts` template (React 19, Vite 8, TS ~6),
   `bootstrap` dependency dropped (was unused), `prettier` kept.
 - `index.html` rebuilt: kept original `<head>` (title, meta description, favicon link,
@@ -34,6 +38,7 @@ as React components.
   Delete once all its logic has been ported to React.
 
 ### Components created (all in `src/components/`, all wired into `src/App.tsx` in order)
+
 `Header`, `Intro`, `AboutMe`, `Skills`, `Projects`, `Contact`, `Footer`, `ReturnToTop`.
 
 All are plain presentational components (no state/hooks yet) ported from the old
@@ -41,22 +46,25 @@ All are plain presentational components (no state/hooks yet) ported from the old
 `<!-- -->` → `{/* */}`, relative `assets/...` paths → `/assets/...`.
 
 ### Static links — DONE
+
 Per the old `script.js`'s `openLink()`/CV-download logic, replaced JS-driven
 `<button id="...">` / `<a id="...">` (no href, wired by `getElementById` + click
 listener) with native `<a href="...">`:
+
 - Intro.tsx: CV download → `<a href="/assets/Coquard-Balthazar-CV_de.pdf"
-  download="Coquard-Balthazar-CV_de.pdf">` (replaces old `btn-download` JS logic)
+download="Coquard-Balthazar-CV_de.pdf">` (replaces old `btn-download` JS logic)
 - Intro.tsx + Contact.tsx: social icons (LinkedIn, GitHub, email) → real `<a href>`
   with `target="_blank" rel="noopener noreferrer"` for external links, `mailto:`
   for email (no target/rel needed for mailto)
 - Projects.tsx: all 5 "View code" buttons → `<a href="https://github.com/..."
-  target="_blank" rel="noopener noreferrer" className="btn btn-project-discover">`
+target="_blank" rel="noopener noreferrer" className="btn btn-project-discover">`
   (URLs taken from `script.js`'s `openLink(...)` calls)
 - Fixed a find-replace artifact bug: "classNamees" → "classes" in a Blackjack
   project description (was `class` → `className` over-replacing the word "classes").
 - Fixed `ReturnToTop.tsx` image path `assets/...` → `/assets/...`.
 
 ### NOT YET DONE — remaining `script.js` behaviors to port (next steps, in order)
+
 1. **Mobile menu (in progress when break started)** — `Header.tsx` needs
    `useState(false)` for `isMenuOpen`, hamburger icon `onClick` sets true, "CLOSE"
    button + each nav link `onClick` sets false. Replace old `.show`/`.hide` class
@@ -71,7 +79,7 @@ listener) with native `<a href="...">`:
    button is permanently invisible (`#return-to-top` has `visibility: hidden` by
    default in `custom.css`, only `.visible` shows it).
 3. **"Let's talk" navbar button** — old code: `openLinkSameWindow('btn-navbar',
-   '#contact')`. Should become a plain `<a href="#contact">` (anchor link, same
+'#contact')`. Should become a plain `<a href="#contact">` (anchor link, same
    tab) — same "native HTML over JS" pattern as the other links. Currently still a
    `<button id="btn-navbar">` with no behavior.
 4. **Contact form submission** (`script.js` lines 53–66) — builds a `mailto:` link
@@ -80,6 +88,7 @@ listener) with native `<a href="...">`:
    Phase 6 comes up rather than reimplementing the mailto approach now.
 
 ### After all script.js logic is ported
+
 - Delete `script.js` and `old-index-reference.html` from repo root.
 - Clean up `public/assets/Website Portfolio - Miro_files/` — leftover saved-webpage
   junk (~50 files: `.Download`, `Zone.Identifier` files, an accidentally-saved Miro
@@ -92,10 +101,11 @@ listener) with native `<a href="...">`:
 - Final visual diff check against the live site at coquardbalthazar.github.io.
 
 ### Working style reminders for this user (in addition to project CLAUDE.md)
+
 - User is writing most components themselves now and asking for review — let them
   drive, review + correct rather than rewrite wholesale.
 - User wants conceptual explanations (ports, Vite public/ vs src/, React events,
-  target="_blank"/rel, dependencies vs devDependencies, etc.) interleaved with the
+  target="\_blank"/rel, dependencies vs devDependencies, etc.) interleaved with the
   practical steps — keep giving these, calibrated to "strong programmer, new to
   JS/web ecosystem."
 - Decided: CSS Modules / per-component CSS split is deferred to a follow-up after
