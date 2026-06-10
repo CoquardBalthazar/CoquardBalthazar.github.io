@@ -1,7 +1,5 @@
 {
   "permissions": {
-    "allow": [
-      "PowerShell(Get-ChildItem *)"
-    ]
+    "allow": ["PowerShell(Get-ChildItem *)"]
   }
 }
