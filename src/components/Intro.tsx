@@ -1,0 +1,54 @@
+function Intro() {
+  return (
+    <section id="introduction">
+      <div className="introduction control">
+        <div className="introduction content">
+          <h1 className="font-light">
+            # Welcome to my portfolio ! <br />
+            <span>{"{I'm Balthazar}"}</span>
+          </h1>
+          <p className="font-light" id="h1-subtitle">
+            Currently searching for a Junior Software position (Werkstudent /
+            Intern) to expand my programming know-how! <br />
+            Avid to learn from you, thrilled to get to know you !
+          </p>
+
+          {/* Social Network button */}
+          <div className="social-media-control">
+            <a
+              href="https://www.linkedin.com/in/balthazar-coquard/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="fa fa-linkedin"
+            ></a>
+            <a
+              href="https://github.com/CoquardBalthazar"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="fa fa-github"
+            ></a>
+            <a href="mailto:balthazar.coquard@gmail.com" className="fa fa-google"></a>
+          </div>
+          <a
+            href="/assets/Coquard-Balthazar-CV_de.pdf"
+            download="Coquard-Balthazar-CV_de.pdf"
+            className="btn btn-secondary btn-introduction"
+          >
+            Download CV
+          </a>
+        </div>
+        <div className="introduction logo-form">
+          <img
+            src="/assets/introduction-img-group-forms.svg"
+            alt="Group of forms"
+            width="75%"
+            height="75%"
+            className="img-intro"
+          />
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default Intro
