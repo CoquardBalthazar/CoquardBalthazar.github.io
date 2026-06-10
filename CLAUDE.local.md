@@ -10,7 +10,7 @@
 - [x] phase 0 : adding claude context
 - [x] phase 1 : migration scaffold — DONE, deployed via GitHub Actions to coquardbalthazar.github.io
 - [ ] phase 2 : data-driven content — NOT STARTED
-- branch : refactor2026/phase1-migration-scafold (merge to dev → main still pending if not done)
+- branch : refactor2026/phase2-data-driven-content
 - broken : nothing currently broken
 
 ## Phase 1 — summary (done)
