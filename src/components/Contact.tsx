@@ -27,9 +27,8 @@ function Contact() {
             <div className="input-message">
               <textarea
                 id="message"
-                type="message"
                 name="message"
-                rows="5"
+                rows={5}
                 placeholder="Your message"
                 required
               ></textarea>
