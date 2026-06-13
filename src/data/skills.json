@@ -1,0 +1,172 @@
+[
+  {
+    "id": "python",
+    "label": "Python",
+    "tier": "production",
+    "category": "languages",
+    "icon": null
+  },
+  {
+    "id": "r",
+    "label": "R",
+    "tier": "production",
+    "category": "languages",
+    "icon": null
+  },
+  {
+    "id": "sql",
+    "label": "SQL",
+    "tier": "production",
+    "category": "languages",
+    "icon": null
+  },
+  {
+    "id": "javascript",
+    "label": "JavaScript",
+    "tier": "proficient",
+    "category": "languages",
+    "icon": null
+  },
+  {
+    "id": "html-css",
+    "label": "HTML / CSS",
+    "tier": "proficient",
+    "category": "languages",
+    "icon": null
+  },
+  {
+    "id": "cpp",
+    "label": "C++",
+    "tier": "comfortable",
+    "category": "languages",
+    "icon": null
+  },
+  {
+    "id": "java",
+    "label": "Java",
+    "tier": "comfortable",
+    "category": "languages",
+    "icon": null
+  },
+
+  {
+    "id": "pyspark",
+    "label": "PySpark",
+    "tier": "production",
+    "category": "frameworks",
+    "icon": null
+  },
+  {
+    "id": "react",
+    "label": "React",
+    "tier": "learning",
+    "category": "frameworks",
+    "icon": null
+  },
+  {
+    "id": "node",
+    "label": "Node.js",
+    "tier": "learning",
+    "category": "frameworks",
+    "icon": null
+  },
+  {
+    "id": "postgresql",
+    "label": "PostgreSQL",
+    "tier": "comfortable",
+    "category": "frameworks",
+    "icon": null
+  },
+  {
+    "id": "docker",
+    "label": "Docker",
+    "tier": "learning",
+    "category": "frameworks",
+    "icon": null
+  },
+  {
+    "id": "threejs",
+    "label": "Three.js",
+    "tier": "learning",
+    "category": "frameworks",
+    "icon": null
+  },
+  {
+    "id": "powerapps",
+    "label": "Power Apps",
+    "tier": "proficient",
+    "category": "frameworks",
+    "icon": null
+  },
+
+  {
+    "id": "git",
+    "label": "Git",
+    "tier": "production",
+    "category": "devops",
+    "icon": null
+  },
+  {
+    "id": "github-actions",
+    "label": "GitHub Actions",
+    "tier": "proficient",
+    "category": "devops",
+    "icon": null
+  },
+  {
+    "id": "azure-devops",
+    "label": "Azure DevOps",
+    "tier": "production",
+    "category": "devops",
+    "icon": null
+  },
+  {
+    "id": "databricks",
+    "label": "Databricks",
+    "tier": "production",
+    "category": "devops",
+    "icon": null
+  },
+  {
+    "id": "linux",
+    "label": "Linux / WSL",
+    "tier": "production",
+    "category": "devops",
+    "icon": null
+  },
+  {
+    "id": "jfrog",
+    "label": "JFrog Artifactory",
+    "tier": "production",
+    "category": "devops",
+    "icon": null
+  },
+  {
+    "id": "sphinx",
+    "label": "Sphinx",
+    "tier": "production",
+    "category": "devops",
+    "icon": null
+  },
+  {
+    "id": "tox",
+    "label": "Tox",
+    "tier": "production",
+    "category": "devops",
+    "icon": null
+  },
+  {
+    "id": "pytest",
+    "label": "Pytest",
+    "tier": "production",
+    "category": "devops",
+    "icon": null
+  },
+  {
+    "id": "unittest",
+    "label": "Unittest",
+    "tier": "production",
+    "category": "devops",
+    "icon": null
+  }
+]
