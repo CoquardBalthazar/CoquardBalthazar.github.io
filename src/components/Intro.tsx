@@ -33,8 +33,8 @@ function Intro() {
             ></a>
           </div>
           <a
-            href="/assets/Coquard-Balthazar-CV_de.pdf"
-            download="Coquard-Balthazar-CV_de.pdf"
+            href="/assets/CVs_20260606_InDesign_EN_SE_WorkingStudent.pdf"
+            download="CVs_20260606_InDesign_EN_SE_WorkingStudent.pdf"
             className="btn btn-secondary btn-introduction"
           >
             Download CV
