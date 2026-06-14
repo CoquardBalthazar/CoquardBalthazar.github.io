@@ -612,7 +612,7 @@ h2.project-title {
   background-color: var(--primary-10);
 }
 
-.btn-play-container {
+.btn-demo-container {
   width: 10rem;
   height: calc(10rem * 0.4047); /*height-per-width ratio of the original image*/
   border: none;
@@ -622,7 +622,7 @@ h2.project-title {
   left: 50%;
   transform: translate(-50%, -50%); /* Center the child */
 }
-.btn-play-link {
+.btn-demo-link {
   display: inline-block;
   text-decoration: none; /* Remove underline */
   color: #333; /* Link text color */
@@ -631,19 +631,19 @@ h2.project-title {
   cursor: url('/assets/custom-cursor-paw-select.svg'), pointer;
 }
 
-.btn-play {
-  background-image: url('/assets/btn-play.svg');
+.btn-demo {
+  background-image: url('/assets/btn-demo.svg');
   width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center;
 }
-.btn-play:hover {
-  background-image: url('/assets/btn-play-hover.svg');
+.btn-demo:hover {
+  background-image: url('/assets/btn-demo-hover.svg');
 }
 
-.btn-play:active {
-  background-image: url('/assets/btn-play.svg');
+.btn-demo:active {
+  background-image: url('/assets/btn-demo.svg');
 }
 
 #left-card1 {

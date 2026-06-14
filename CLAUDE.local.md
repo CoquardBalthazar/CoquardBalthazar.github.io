@@ -10,7 +10,10 @@
 - [x] phase 0 : adding claude context
 - [x] phase 1 : migration scaffold — DONE, deployed via GitHub Actions to coquardbalthazar.github.io
 - [ ] phase 2 : data-driven content — IN PROGRESS, `data/*.json` filled in (projects, skills,
-      hackathons), `<ProjectCard>` + filter chips still to do
+      hackathons), `src/data/type.ts` written (Project/Hackathon/Skill interfaces),
+      `<ProjectCard.tsx>` built (consumes `Project`, two-half layout). Still to do: CSS for
+      `.project-card`/`.project-card-left/right`/`.project-tag` etc., then wire `Projects.tsx`
+      to `.map()` over `projects.json` rendering `<ProjectCard>`, then filter chips.
 - branch : refactor2026/phase2-data-driven-content
 - broken : nothing currently broken
 
@@ -50,8 +53,17 @@ Per `PLAN.md` (updated 2026-06-13):
 - [x] `data/projects.json`, `data/skills.json`, `data/hackathons.json` filled in and reviewed —
   includes the 2 C++ projects + LMU_BiP Pong (originally slated for Phase 3, pulled forward),
   and a corrected `website-portfolio` entry (was duplicating CREA's description/code).
-- Next immediate step: `<ProjectCard>` component consuming `projects.json` — **new design**, see below
-- Filter chips (`All / C++ / Java / Python / JavaScript / Power Apps / Hackathon`) via `useState`,
+- [x] `src/data/type.ts` — `Project`, `Hackathon`, `Skill` interfaces matching the JSON schemas
+  (union-literal types for `theme`/`tier`/`category`, not plain `string`).
+- [x] `src/components/ProjectCard.tsx` — built, takes `{ project: Project }`, two-half layout
+  (left = category badge + title, right = description/tags/View code/Demo button). Demo button
+  conditionally rendered via `{project.demo && (...)}`.
+- [ ] CSS for the new card: `.project-card`, `.project-card-${theme}`, `.project-card-left/right`,
+  `.project-tag`, `.project-card-actions` — none of these exist in `custom.css` yet (use
+  `--primary/--secondary/--tertiary` tokens for backgrounds)
+- [ ] Wire `Projects.tsx` to `.map()` over `projects.json` rendering `<ProjectCard>` (replaces the
+  old hardcoded `card-left-*`/`card-right-*` cards)
+- [ ] Filter chips (`All / C++ / Java / Python / JavaScript / Power Apps / Hackathon`) via `useState`,
   wired to `projects.json`'s `category` field
 - `<HackathonCard>` + skills tile grid: data file ready in Phase 2, component build is Phase 3
 
@@ -62,9 +74,15 @@ Inspired by wallofportfolios.in/portfolios/val-nogues. Moving away from the old
 
 - Single div per project, background = `theme` color (primary/secondary/tertiary)
 - Inside: left half = category badge + title, right half = description/tags/View code/Demo button
-- `PeekCard` prototype (`src/components/PeekCard.tsx` + the `.peek-*` CSS block at the end of
-  `custom.css`) was a mobile flip/peek-drawer experiment, tested via 3 hardcoded cards in
-  `Projects.tsx` — **superseded**, remove both when the real `<ProjectCard>` is built.
+- `PeekCard` prototype (mobile flip/peek-drawer experiment) already removed, both the component
+  and its `.peek-*` CSS block — no longer relevant.
+
+### Naming: `btn-play` → `btn-demo` (renamed 2026-06-14)
+
+Renamed everywhere — `public/assets/btn-demo.svg` + `btn-demo-hover.svg` (including their
+internal `<g id="...">`, and fixed a "hoover" → "hover" typo on the hover variant), `custom.css`
+classes `.btn-demo-container` / `.btn-demo-link` / `.btn-demo`, and usages in `ProjectCard.tsx`
+and `Projects.tsx`. Reflects that this is a "view demo" link, not necessarily a game.
 
 ### Phase 4 direction (decided 2026-06-10, renumbered 2026-06-13, for later)
 
@@ -82,15 +100,24 @@ Mobile/tablet gets a different nav architecture, not just breakpoints:
 Three.js demo placed as its own section directly between AboutMe and Projects:
 `<AboutMe> → <ThreeDemo> → <Projects>`.
 
-### Schema notes (2026-06-10, skills.json updated 2026-06-13)
+### Schema notes (2026-06-10, skills.json + hackathons.json updated 2026-06-13)
 
 `projects.json` schema: `category` stays a single string (drives filter chips, one project = one
 chip), `tags` is the array for the full tech list. Added `year`, `wip`/`live` as booleans,
 `screenshot`. Full schema in PLAN.md section 5.
 
-`skills.json` schema expanded beyond the original plan: now `{ id, label, tier, category, icon }`
-— `category` ∈ `languages | frameworks | devops`, `tier` ∈
-`production | proficient | comfortable | learning`. Full schema in PLAN.md section 5.
+`skills.json` schema expanded beyond the original plan: now `{ id, title, tier, category, icon }`
+(field renamed `label` → `title` for consistency with `projects.json`/`hackathons.json`) —
+`category` ∈ `languages | frameworks | devops`, `tier` ∈
+`production | proficient | comfortable | learning`. PLAN.md section 5 still says `label` — needs
+updating.
+
+`hackathons.json` schema also expanded beyond PLAN.md section 5 (which still has the old
+`name`/`stack`/`link` shape): now `{ id, title, year, date, project, theme, description, tags,
+teamSize, role, result, live, code, demo, screenshot }` — `theme` and `tags` added for
+consistency with `projects.json` (so `<HackathonCard>` can reuse the same styling/tag-list
+pattern), `code`/`demo`/`screenshot` added for an optional project link per hackathon.
+PLAN.md section 5 needs updating to match — not yet done.
 
 ## Working style reminders for this user (in addition to project CLAUDE.md)
 

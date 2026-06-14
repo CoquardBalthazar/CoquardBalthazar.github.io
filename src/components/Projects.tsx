@@ -21,10 +21,10 @@ function Projects() {
               <a
                 href="https://coquardbalthazar.github.io/pigGame-js/"
                 target="_blank"
-                className="btn-play-link"
+                className="btn-demo-link"
               >
-                <div className="btn-play-container">
-                  <div className="btn-play"></div>
+                <div className="btn-demo-container">
+                  <div className="btn-demo"></div>
                 </div>
               </a>
             </div>
@@ -48,10 +48,10 @@ function Projects() {
               <a
                 href="https://coquardbalthazar.github.io/guessMyNumber-js/"
                 target="_blank"
-                className="btn-play-link"
+                className="btn-demo-link"
               >
-                <div className="btn-play-container">
-                  <div className="btn-play"></div>
+                <div className="btn-demo-container">
+                  <div className="btn-demo"></div>
                 </div>
               </a>
             </div>

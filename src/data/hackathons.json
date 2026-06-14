@@ -1,26 +1,36 @@
 [
   {
     "id": "hack-1",
-    "name": "Yellow VC / Project A / TUM.ai Hackathon",
+    "title": "Yellow VC / Project A / TUM.ai Hackathon",
+    "year": 2026,
     "date": "2026-05",
     "project": "VC Deal Sourcing Tool",
+    "theme": "tertiary",
     "description": "Built a deal-sourcing automation tool for venture capital, crawling X/Twitter, LinkedIn, ProductHunt, and GitHub to surface early-stage startups. FastAPI backend with SQLite storage.",
-    "stack": ["Python", "FastAPI", "SQLite", "Web Scraping"],
+    "tags": ["Python", "FastAPI", "SQLite", "Web Scraping"],
     "teamSize": 5,
     "role": "Full-stack",
     "result": "2nd place",
-    "link": null
+    "live": false,
+    "code": null,
+    "demo": null,
+    "screenshot": null
   },
   {
     "id": "hack-2",
-    "name": "osapiens Makeathon 2026",
+    "title": "osapiens Makeathon 2026",
+    "year": 2026,
     "date": "2026-05",
     "project": "Computer Vision Deforestation Detector",
+    "theme": "secondary",
     "description": "Contributed to a satellite imagery pipeline detecting deforestation using Sentinel-1 and Sentinel-2 data with GLAD/RADD alert labels. Computer vision model trained to classify forest loss at scale.",
-    "stack": ["Python", "Computer Vision", "Sentinel-1", "Sentinel-2", "ML"],
+    "tags": ["Python", "Computer Vision", "Sentinel-1", "Sentinel-2", "ML"],
     "teamSize": 4,
     "role": "Support",
     "result": "Participant",
-    "link": null
+    "live": false,
+    "code": null,
+    "demo": null,
+    "screenshot": null
   }
 ]
