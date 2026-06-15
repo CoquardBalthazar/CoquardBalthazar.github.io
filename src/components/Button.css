@@ -19,14 +19,12 @@
 }
 
 .btn-primary:hover {
-  background-color: transparent;
+  background-color: var(--primary-10);
   color: var(--dark);
-  border-style: solid;
-  border-width: 0.2rem;
-  border-color: var(--primary);
+  border-color: var(--dark);
 }
 .btn-primary:active {
-  background-color: var(--secondary);
+  background-color: var(--dark);
   color: var(--light);
 }
 
@@ -37,15 +35,13 @@
 }
 
 .btn-secondary:hover {
-  background-color: transparent;
-  color: var(--light);
-  border-style: solid;
-  border-width: 0.2rem;
-  border-color: var(--secondary);
+  background-color: var(--primary-10);
+  color: var(--dark);
+  border-color: var(--dark);
 }
 
 .btn-secondary:active {
-  background-color: var(--secondary);
+  background-color: var(--dark);
   color: var(--light);
 }
 
