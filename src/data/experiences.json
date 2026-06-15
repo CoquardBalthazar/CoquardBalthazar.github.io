@@ -1,0 +1,48 @@
+[
+  {
+    "id": "tum-msc-management-technology",
+    "title": "TU München",
+    "company": "Technical University of Munich",
+    "role": "M.Sc. Management & Technology",
+    "location": "Munich, Germany",
+    "period": "NOW",
+    "description": [
+      "Master's program combining computer science, engineering, and business management.",
+      "Focus areas: software engineering, technology management, and entrepreneurship."
+    ],
+    "tags": ["TUM", "M.Sc.", "Management & Technology"],
+    "theme": "primary",
+    "current": false,
+    "visible": true
+  },
+  {
+    "id": "meag-risk-models-analytics",
+    "title": "MEAG GmbH",
+    "company": "MEAG MUNICH ERGO AssetManagement GmbH",
+    "role": "Working Student — Risk Models & Analytics",
+    "location": "Munich, Germany",
+    "period": "Sept 2024 – Sept 2026",
+    "description": [
+      "Independently redeveloped a liquidity scoring model (Liquiscore), reimplementing an existing R codebase in Python on Databricks",
+      "Co-led design and development of a credit-risk ETL pipeline (PRIME) in Python + PySpark, replacing a legacy MS Access solution",
+      "Designed a medallion architecture (bronze/silver/gold) with object-oriented table abstractions, integrated into Databricks Jobs.",
+      "Built the full testing pipeline: mock-data generation (CSV/Parquet), unit tests (unittest/pytest), tox config, and CI integration; authored technical docs with Sphinx.",
+      "Set up environment-agnostic, config-based parameterization; version control via Git, PRs, and Azure DevOps."
+    ],
+    "tags": [
+      "Python",
+      "PySpark",
+      "SQL",
+      "Databricks",
+      "Azure DevOps",
+      "CI/CD",
+      "Git",
+      "R",
+      "Sphinx",
+      "pytest"
+    ],
+    "theme": "primary",
+    "current": true,
+    "visible": true
+  }
+]

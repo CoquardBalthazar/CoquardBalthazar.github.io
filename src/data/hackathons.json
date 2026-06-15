@@ -14,7 +14,8 @@
     "live": false,
     "code": null,
     "demo": null,
-    "screenshot": null
+    "screenshot": null,
+    "visible": true
   },
   {
     "id": "hack-2",
@@ -31,6 +32,7 @@
     "live": false,
     "code": null,
     "demo": null,
-    "screenshot": null
+    "screenshot": null,
+    "visible": true
   }
 ]

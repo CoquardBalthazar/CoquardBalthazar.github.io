@@ -1,0 +1,34 @@
+[
+  {
+    "id": "lets-talk",
+    "label": "Let's talk",
+    "href": "#contact",
+    "download": null,
+    "variant": "secondary",
+    "external": false
+  },
+  {
+    "id": "download-cv",
+    "label": "Download CV",
+    "href": "/assets/cv.pdf",
+    "download": "CVs_20260606_InDesign_EN_SE_WorkingStudent.pdf",
+    "variant": "secondary",
+    "external": true
+  },
+  {
+    "id": "contact",
+    "label": "Contact",
+    "href": null,
+    "download": null,
+    "variant": "tertiary",
+    "external": true
+  },
+  {
+    "id": "view-code",
+    "label": "View code",
+    "href": null,
+    "download": null,
+    "variant": "quaternary",
+    "external": true
+  }
+]
