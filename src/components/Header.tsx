@@ -1,4 +1,10 @@
 import { useState } from 'react'
+import Button from './Button'
+import buttons from '../data/buttons.json'
+import type { ButtonConfig } from '../data/type'
+import './Header.css'
+
+const letsTalk = (buttons as ButtonConfig[]).find((b) => b.id === 'lets-talk')!
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -33,7 +39,7 @@ function Header() {
           About me
         </a>
         <a
-          href="#skills"
+          href="#experience"
           className="navbar-item boxhead"
           onClick={() => setIsMenuOpen(false)}
         >
@@ -46,13 +52,11 @@ function Header() {
         >
           Projects
         </a>
-        <a
-          href="#contact"
-          className="btn btn-secondary btn-lets-talk"
+        <Button
+          config={letsTalk}
+          className="btn-lets-talk"
           onClick={() => setIsMenuOpen(false)}
-        >
-          Let's talk
-        </a>
+        />
       </div>
     </header>
   )

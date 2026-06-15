@@ -4,6 +4,7 @@
     "title": "Python",
     "tier": "production",
     "category": "languages",
+    "categoryLabel": "Languages",
     "icon": null,
     "visible": true
   },
@@ -12,6 +13,7 @@
     "title": "R",
     "tier": "production",
     "category": "languages",
+    "categoryLabel": "Languages",
     "icon": null,
     "visible": true
   },
@@ -20,6 +22,7 @@
     "title": "SQL",
     "tier": "production",
     "category": "languages",
+    "categoryLabel": "Languages",
     "icon": null,
     "visible": true
   },
@@ -28,6 +31,7 @@
     "title": "JavaScript",
     "tier": "proficient",
     "category": "languages",
+    "categoryLabel": "Languages",
     "icon": null,
     "visible": true
   },
@@ -36,6 +40,7 @@
     "title": "HTML / CSS",
     "tier": "proficient",
     "category": "languages",
+    "categoryLabel": "Languages",
     "icon": null,
     "visible": true
   },
@@ -44,6 +49,7 @@
     "title": "C++",
     "tier": "comfortable",
     "category": "languages",
+    "categoryLabel": "Languages",
     "icon": null,
     "visible": true
   },
@@ -52,6 +58,7 @@
     "title": "Java",
     "tier": "comfortable",
     "category": "languages",
+    "categoryLabel": "Languages",
     "icon": null,
     "visible": true
   },
@@ -61,6 +68,7 @@
     "title": "React",
     "tier": "learning",
     "category": "frameworks-libraries",
+    "categoryLabel": "Frameworks & Libraries",
     "icon": null,
     "visible": true
   },
@@ -69,6 +77,7 @@
     "title": "Node.js",
     "tier": "learning",
     "category": "frameworks-libraries",
+    "categoryLabel": "Frameworks & Libraries",
     "icon": null,
     "visible": true
   },
@@ -77,6 +86,7 @@
     "title": "Three.js",
     "tier": "learning",
     "category": "frameworks-libraries",
+    "categoryLabel": "Frameworks & Libraries",
     "icon": null,
     "visible": true
   },
@@ -85,6 +95,7 @@
     "title": "Power Apps",
     "tier": "proficient",
     "category": "frameworks-libraries",
+    "categoryLabel": "Frameworks & Libraries",
     "icon": null,
     "visible": true
   },
@@ -94,6 +105,7 @@
     "title": "PostgreSQL",
     "tier": "comfortable",
     "category": "databases",
+    "categoryLabel": "Databases",
     "icon": null,
     "visible": true
   },
@@ -103,6 +115,7 @@
     "title": "PySpark",
     "tier": "production",
     "category": "data-ml",
+    "categoryLabel": "Data & ML",
     "icon": null,
     "visible": true
   },
@@ -111,6 +124,7 @@
     "title": "Databricks",
     "tier": "production",
     "category": "data-ml",
+    "categoryLabel": "Data & ML",
     "icon": null,
     "visible": true
   },
@@ -120,6 +134,7 @@
     "title": "Docker",
     "tier": "learning",
     "category": "devops-infrastructure",
+    "categoryLabel": "Infra & DevOps",
     "icon": null,
     "visible": true
   },
@@ -128,6 +143,7 @@
     "title": "GitHub Actions",
     "tier": "proficient",
     "category": "devops-infrastructure",
+    "categoryLabel": "Infra & DevOps",
     "icon": null,
     "visible": true
   },
@@ -136,6 +152,7 @@
     "title": "Azure DevOps",
     "tier": "production",
     "category": "devops-infrastructure",
+    "categoryLabel": "Infra & DevOps",
     "icon": null,
     "visible": true
   },
@@ -144,6 +161,7 @@
     "title": "Linux / WSL",
     "tier": "production",
     "category": "devops-infrastructure",
+    "categoryLabel": "Infra & DevOps",
     "icon": null,
     "visible": true
   },
@@ -152,6 +170,7 @@
     "title": "JFrog Artifactory",
     "tier": "production",
     "category": "devops-infrastructure",
+    "categoryLabel": "Infra & DevOps",
     "icon": null,
     "visible": true
   },
@@ -161,6 +180,7 @@
     "title": "Git",
     "tier": "production",
     "category": "tools-workflow",
+    "categoryLabel": "Tools & Workflow",
     "icon": null,
     "visible": true
   },
@@ -169,6 +189,7 @@
     "title": "Sphinx",
     "tier": "production",
     "category": "tools-workflow",
+    "categoryLabel": "Tools & Workflow",
     "icon": null,
     "visible": true
   },
@@ -177,6 +198,7 @@
     "title": "Tox",
     "tier": "production",
     "category": "tools-workflow",
+    "categoryLabel": "Tools & Workflow",
     "icon": null,
     "visible": true
   },
@@ -185,6 +207,7 @@
     "title": "Pytest",
     "tier": "production",
     "category": "tools-workflow",
+    "categoryLabel": "Tools & Workflow",
     "icon": null,
     "visible": true
   },
@@ -193,6 +216,7 @@
     "title": "Unittest",
     "tier": "production",
     "category": "tools-workflow",
+    "categoryLabel": "Tools & Workflow",
     "icon": null,
     "visible": true
   }

@@ -45,6 +45,7 @@ export interface Skill {
     | 'devops-infrastructure'
     | 'data-ml'
     | 'tools-workflow'
+  categoryLabel: string
   icon: string | null
   visible: boolean
 }
