@@ -37,14 +37,14 @@ function Header() {
           className="navbar-item boxhead"
           onClick={() => setIsMenuOpen(false)}
         >
-          Skills
+          Experience
         </a>
         <a
           href="#projects"
           className="navbar-item boxhead"
           onClick={() => setIsMenuOpen(false)}
         >
-          My projects
+          Projects
         </a>
         <a
           href="#contact"

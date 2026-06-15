@@ -1,4 +1,5 @@
 import type { Project } from '../data/type'
+import './ProjectCard.css'
 
 function ProjectCard({ project }: { project: Project }) {
   return (
@@ -47,3 +48,5 @@ function ProjectCard({ project }: { project: Project }) {
     </div>
   )
 }
+
+export default ProjectCard
