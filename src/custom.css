@@ -45,12 +45,7 @@ html {
   box-sizing: 'border-box';
 }
 
-header {
-  background-color: var(--dark);
-  color: var(--light);
-  font-family: inherit;
-  width: 100%;
-}
+/* header element + navbar styles moved to components/Header.css */
 
 body {
   background-color: var(--dark);
@@ -117,144 +112,7 @@ p {
   transform: skew(-5deg);
 }
 
-.btn {
-  font-size: 2rem;
-  font-weight: 600;
-  padding: 1rem 2.5rem;
-  border-radius: 0.75rem;
-  border-style: solid;
-  border-color: transparent;
-  min-width: 10rem;
-  cursor: url('/assets/custom-cursor-paw-select.svg'), pointer;
-}
-
-.btn-primary {
-  background-color: var(--primary);
-  color: var(--light);
-  transition: var(--primary) 0.2s ease;
-}
-
-.btn-primary:hover {
-  background-color: transparent;
-  color: var(--dark);
-  border-style: solid;
-  border-width: 0.2rem;
-  border-color: var(--primary);
-}
-.btn-primary:active {
-  background-color: var(--secondary);
-  color: var(--light);
-}
-
-.btn-secondary {
-  background-color: var(--secondary);
-  color: var(--light);
-  transition: var(--secondary) 0.2s ease;
-}
-
-.btn-secondary:hover {
-  background-color: transparent;
-  color: var(--light);
-  border-style: solid;
-  border-width: 0.2rem;
-  border-color: var(--secondary);
-}
-
-.btn-secondary:active {
-  background-color: var(--secondary);
-  color: var(--light);
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 14rem;
-  width: 100%;
-}
-
-/* HEADER - Left : Logo Brand with spans*/
-.navbar-ctrl-brand {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30rem;
-  height: 5rem;
-  margin: 1rem 5rem;
-}
-
-.boxhead {
-  color: var(--light);
-  text-decoration: none;
-  cursor: url('/assets/custom-cursor-paw-select.svg'), pointer;
-}
-a.boxhead:hover {
-  color: var(--primary-30);
-}
-a.boxhead:active {
-  color: var(--primary-60);
-}
-
-.logo {
-  font-family: 'Fira Code';
-  font-size: 1.75rem;
-  font-weight: bold;
-}
-
-/* HEADER - Right : Navigation items*/
-.navbar-ctrl-items {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin: 1rem 5rem;
-  max-width: calc(
-    100% - 30rem
-  ); /* Adjust based on the width of .navbar-ctrl-brand */
-}
-
-.navbar-item {
-  font-family: inherit;
-  min-width: 12rem;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 1rem 0rem;
-}
-
-#btn-navbar {
-  margin: 1.5rem 5rem;
-}
-.navbar-hide {
-  display: none;
-  text-decoration: none;
-  font-weight: 600;
-  font-style: italic;
-}
-
-.menu-icon {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  margin-bottom: 3rem;
-}
-.menu-icon .bar1 {
-  width: 6rem;
-  height: 0.6rem;
-  margin: 0.8rem 0;
-  background-color: var(--primary-60);
-}
-.menu-icon .bar2 {
-  width: 6rem;
-  height: 0.6rem;
-  margin: 0.8rem 0;
-  background-color: var(--secondary);
-}
-.menu-icon .bar3 {
-  width: 6rem;
-  height: 0.6rem;
-  margin: 0.8rem 0;
-  background-color: var(--tertiary);
-}
+/* Button styles moved to components/Button.css (incremental CSS migration) */
 
 /* INTRODUCTION - Left : Content*/
 
@@ -612,7 +470,7 @@ h2.project-title {
   background-color: var(--primary-10);
 }
 
-.btn-play-container {
+.btn-demo-container {
   width: 10rem;
   height: calc(10rem * 0.4047); /*height-per-width ratio of the original image*/
   border: none;
@@ -622,7 +480,7 @@ h2.project-title {
   left: 50%;
   transform: translate(-50%, -50%); /* Center the child */
 }
-.btn-play-link {
+.btn-demo-link {
   display: inline-block;
   text-decoration: none; /* Remove underline */
   color: #333; /* Link text color */
@@ -631,19 +489,19 @@ h2.project-title {
   cursor: url('/assets/custom-cursor-paw-select.svg'), pointer;
 }
 
-.btn-play {
-  background-image: url('assets/btn-play.svg');
+.btn-demo {
+  background-image: url('/assets/btn-demo.svg');
   width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center;
 }
-.btn-play:hover {
-  background-image: url('assets/btn-play-hover.svg');
+.btn-demo:hover {
+  background-image: url('/assets/btn-demo-hover.svg');
 }
 
-.btn-play:active {
-  background-image: url('assets/btn-play.svg');
+.btn-demo:active {
+  background-image: url('/assets/btn-demo.svg');
 }
 
 #left-card1 {
@@ -1004,67 +862,7 @@ p.to-do {
 
 /* Media Queries for Phone -------------------------------------------------------------------------------------------*/
 @media (max-width: 431px) {
-  /*NAVBAR*/
-  .navbar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 22rem;
-  }
-
-  .navbar-ctrl-brand {
-    display: flex;
-    margin: 3rem 0;
-    width: 30rem;
-    height: 5rem;
-  }
-  .logo {
-    font-size: 2rem;
-    font-weight: bold;
-  }
-  .navbar-hide {
-    display: flex;
-    margin-bottom: 20rem;
-  }
-  .navbar-hide.hide {
-    display: none;
-  }
-
-  .menu-icon {
-    display: flex;
-  }
-
-  .navbar-ctrl-items {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin: 0;
-    transform: translate(-50%, -50%);
-    background-color: var(--dark);
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-
-    font-family: inherit;
-    min-width: 100%;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 2rem 0rem;
-
-    #btn-navbar {
-      margin-left: 5rem;
-      margin-right: 5rem;
-    }
-  }
-
-  .navbar-ctrl-items.show {
-    display: flex;
-  }
+  /* NAVBAR mobile styles moved to components/Header.css */
 
   /*INTRODUCTION */
   .introduction.control {

@@ -1,0 +1,97 @@
+/* ProjectCard: two-panel staggered layout, theme-based color pairs */
+
+.project-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.project-card-left,
+.project-card-right {
+  flex: 1;
+  box-sizing: border-box;
+  border-radius: 0.75rem;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.project-card-right {
+  margin-top: 3rem;
+  align-items: center;
+  text-align: center;
+}
+
+/* theme color pairs: light/cream left panel, accent right panel */
+.project-card-primary .project-card-left {
+  background-color: var(--primary-10);
+}
+.project-card-primary .project-card-right {
+  background-color: var(--primary-60);
+}
+
+.project-card-secondary .project-card-left {
+  background-color: var(--secondary-10);
+}
+.project-card-secondary .project-card-right {
+  background-color: var(--secondary);
+}
+
+.project-card-tertiary .project-card-left {
+  background-color: var(--tertiary-10);
+}
+.project-card-tertiary .project-card-right {
+  background-color: var(--tertiary);
+}
+
+.project-card-left .card-category {
+  position: static;
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.project-card-title {
+  font-size: 2.5rem;
+  color: var(--dark);
+  margin: 0;
+}
+
+.project-card-right .project-description {
+  position: static;
+  transform: none;
+  width: 100%;
+  margin: 0;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.project-tag {
+  background-color: var(--dark);
+  color: var(--light);
+  font-size: 1.2rem;
+  padding: 0.3rem 1rem;
+  border-radius: 1rem;
+}
+
+.project-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.project-card-actions .btn-project-discover {
+  position: static;
+  transform: none;
+}
+
+.project-card-actions .btn-demo-container {
+  position: static;
+  transform: none;
+}

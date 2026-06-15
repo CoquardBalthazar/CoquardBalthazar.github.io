@@ -1,0 +1,79 @@
+.btn {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1rem 2.5rem;
+  border-radius: 0.75rem;
+  border-style: solid;
+  border-color: transparent;
+  min-width: 10rem;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  cursor: url('/assets/custom-cursor-paw-select.svg'), pointer;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--light);
+  transition: var(--primary) 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--dark);
+  border-style: solid;
+  border-width: 0.2rem;
+  border-color: var(--primary);
+}
+.btn-primary:active {
+  background-color: var(--secondary);
+  color: var(--light);
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  color: var(--light);
+  transition: var(--secondary) 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: transparent;
+  color: var(--light);
+  border-style: solid;
+  border-width: 0.2rem;
+  border-color: var(--secondary);
+}
+
+.btn-secondary:active {
+  background-color: var(--secondary);
+  color: var(--light);
+}
+
+/* placeholder styling — to be tuned in the styling pass */
+.btn-tertiary {
+  background-color: var(--tertiary);
+  color: var(--dark);
+}
+
+.btn-tertiary:hover {
+  background-color: transparent;
+  color: var(--dark);
+  border-width: 0.2rem;
+  border-color: var(--tertiary);
+}
+
+.btn-quaternary {
+  background-color: var(--dark);
+  color: var(--light);
+}
+
+.btn-quaternary:hover {
+  background-color: var(--primary-10);
+  color: var(--dark);
+  border-color: var(--dark);
+}
+
+.btn-quaternary:active {
+  background-color: var(--dark);
+  color: var(--light);
+}
