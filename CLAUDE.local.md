@@ -14,9 +14,10 @@
 - branch : refactor2026/phase3-up-to-down-rebuild (created off `dev` after merging
   `refactor2026/phase2-data-driven-content`)
 - broken : nothing currently broken
-- in progress : styling pass, top-to-bottom through `App.tsx`. Header + Intro CSS split
-  done, responsive (mobile/tablet) pass started for both. Next up: finish the tablet
-  breakpoint for Header+Intro (see "Responsive design pass" below), then `AboutMe`.
+- in progress : styling pass, top-to-bottom through `App.tsx`. Header + Intro + AboutMe
+  CSS split done. Tablet breakpoint for Intro done (15vw gap, 35% forms). AboutMe fully
+  migrated to `AboutMe.css` with new classnames (`about-me-section`, `about-me-body`,
+  `about-me-heading`). Next up: **Skills section** (carousel with arrow buttons).
 
 Note: phases 3–6 were reordered on 2026-06-13 (see `PLAN.md`):
 phase 3 = update content + new structure, phase 4 = mobile responsiveness,
@@ -125,17 +126,25 @@ is now fixed by the `category`/`categoryLabel` split above. `Skills.tsx` can saf
 Not yet started — in rough dependency order:
 
 1. ~~`NAV_LINKS` extraction~~ — DROPPED, see Build order & working agreements above.
-2. **Intro section** — CSS split DONE (`Intro.css` created, desktop+mobile rules moved
-   out of `custom.css`; shared `.social-media-control`/`.fa*` icon classes stayed in
-   `custom.css` since `Contact.tsx` reuses them). Mobile centering fixes DONE. **Tablet
-   breakpoint (768–1023px) still pending** — see "Responsive design pass" below.
-3. **AboutMe** — fix flexible height: currently has good top padding but not enough
-   bottom padding; height should follow content, not be fixed.
-4. **Experience section CSS** — prefill `ExperienceCard.css`/`Experience.css` per the
+2. **Intro section** — DONE. `Intro.css` split from `custom.css`. Mobile centering fixed.
+   Tablet breakpoint done: `padding-left: 15vw` (was fixed `30rem`), forms `35%` (was
+   `50%`), `#h1-subtitle` changed to `max-width: 45rem; width: 100%`. Mobile paragraph
+   bottom margin increased to `8rem` (user-adjusted from `6rem`).
+3. **AboutMe** — DONE. Migrated to `AboutMe.css`. New classnames: `about-me-section`,
+   `about-me-body`, `about-me-heading`. Generic classes (`div-bg-light`, `container`,
+   `content-width`, unused `.about-me`) removed from `custom.css`. Text centered.
+   Desktop height `45rem`, body padding `10rem 0`. Mobile: auto height, 75% width.
+4. **ProjectCard mobile overflow** — at <470px viewport, `.project-card-right` extends
+   to ~488px (scrollWidth 512px vs 400px viewport), causing horizontal scroll that makes
+   the mobile menu look like it has a right-side gap. Root cause diagnosed via Playwright
+   (2026-06-16): some child of `.project-card-right` has a min-content width > ~190px
+   forcing the flex panel wider than its allocated space. Fix deferred — tackle when
+   styling the Work/Projects section.
+5. **Experience section CSS** — prefill `ExperienceCard.css`/`Experience.css` per the
    timeline design the user sketched (vertical line with colored dots per entry,
    company name + role + period on the left, description bullets on the right). Full
    visual design is a later pass — for now just get padding/structure right.
-5. **Skills redesign** — `SkillCard` component:
+6. **Skills redesign** — `SkillCard` component:
    - Card title = the **category** (one card per `categoryLabel`).
    - Card body = list of skills (`title`) in that category, **capped to however many
      fit the card** (take first N).
@@ -145,7 +154,7 @@ Not yet started — in rough dependency order:
    - Old skills markup to reuse as inspiration only (the `<span className="skill tag">
      &lt;h3&gt;</span>` / horizontal-band structure from the previous version) — not a
      hard requirement, just shows prior visual intent (code-tag bracket motif).
-6. **Work section split** — currently `Projects.tsx`/`#projects`. Needs to become a
+7. **Work section split** — currently `Projects.tsx`/`#projects`. Needs to become a
    tabbed section: **Hackathons / Projects / Games**, with **Projects pre-selected**.
    - `TabBar` component: dumb/controlled, renders `[ Label ]` bracket-style buttons,
      parent (`Work`?) owns `useState` for active tab and conditionally renders
@@ -158,9 +167,9 @@ Not yet started — in rough dependency order:
      (would need a `Header.tsx` nav update either way).
    - Tab bar visual reference: bracket-style `[ Hackathons ] [ Projects ] [ Games ]`,
      active tab bold/colored (pink in reference screenshot).
-7. **Contact section** — wire `contact` button (`buttons.json`, `href: null`) to
+8. **Contact section** — wire `contact` button (`buttons.json`, `href: null`) to
    EmailJS submit handler.
-8. **`download-cv` button** — `href` is still the placeholder `/assets/cv.pdf`; actual
+9. **`download-cv` button** — `href` is still the placeholder `/assets/cv.pdf`; actual
    file is `CVs_20260606_InDesign_EN_SE_WorkingStudent.pdf` (used as the `download`
    filename already). Need to confirm the real PDF lives in `public/assets/` and update
    `buttons.json`'s `href` to match.
@@ -208,14 +217,10 @@ box-sizing fix and the tablet block were reverted. **If `box-sizing` is ever fix
 properly, it needs a full pass over rem-based widths/paddings/heights, not a drive-by
 change.**
 
-### Still pending
-- **Tablet (768–1023px) for Intro**: desktop layout already applies by default at
-  ≥768px (row layout, 50/50 split) — no Header changes needed (hamburger menu only
-  shows ≤767px). For Intro, still need to: reduce `.introduction.content`'s
-  `padding: 2rem 0 2rem 30rem` (300px left padding, way too much at 768px) to
-  something small (~3rem), and make `#h1-subtitle` (currently fixed `width: 45rem` =
-  450px) responsive so it doesn't overflow its ~50%-width column. Redo this **without**
-  touching `box-sizing`.
+### Done (2026-06-16)
+- **Tablet (768–1023px) for Intro**: `padding-left: 15vw` (was `30rem`), forms width
+  `35%` (was `50%`), `#h1-subtitle` now `max-width: 45rem; width: 100%`. No box-sizing
+  touched.
 
 ## Card & layout direction (SUPERSEDED 2026-06-10 decision — current as of this session)
 

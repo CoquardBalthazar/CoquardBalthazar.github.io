@@ -155,30 +155,6 @@ p {
   color: white;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-}
-
-.content-width {
-  width: 70rem;
-  margin: 1rem;
-}
-
-.div-bg-light {
-  display: flex;
-  flex-direction: column;
-  height: 30rem;
-  padding-top: 5rem;
-  width: 100%;
-  justify-content: center;
-  text-align: center;
-  background-color: var(--light);
-}
 
 /* -- Skills -- section */
 .skill.section-control {
@@ -352,11 +328,6 @@ p.skill {
   text-align: left;
   width: 80%;
   margin: 3rem 2rem 5rem 1rem;
-}
-.about-me {
-  padding: 0 30rem 0 30rem;
-  margin: 3rem 3rem;
-  width: 60rem;
 }
 
 .content h3 {
@@ -828,20 +799,6 @@ p.to-do {
     justify-content: center; /* Center horizontally */
   }
 
-  /* Skill*/
-  .div-bg-light {
-    height: 58rem;
-    padding-top: 0;
-  }
-
-  .container {
-    display: flex;
-  }
-
-  .content-width {
-    width: 80%;
-    margin: 5rem;
-  }
 
   .skill.section-control {
     display: flex;

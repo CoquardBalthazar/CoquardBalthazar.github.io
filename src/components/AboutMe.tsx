@@ -1,10 +1,12 @@
+import './AboutMe.css'
+
 function AboutMe() {
   return (
     <section id="about-me">
-      <div className="div-bg-light">
-        <div className="container">
-          <h2 className="font-dark container content-width">## About me</h2>
-          <p className="font-dark content-width">
+      <div className="about-me-section">
+        <div className="about-me-body">
+          <h2 className="font-dark about-me-heading">## About me</h2>
+          <p className="font-dark">
             French student based in Munich. I speak{' '}
             <span className="highlight-box-shadow">
               [French, English, German and Spanish]
