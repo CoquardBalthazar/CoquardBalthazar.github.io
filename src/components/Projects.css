@@ -1,5 +1,1 @@
-.project-list {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
+/* Projects tab content — layout handled by ProjectCard.css */

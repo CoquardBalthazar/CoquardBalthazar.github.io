@@ -16,20 +16,22 @@ function ProjectCard({ project, theme }: { project: Project; theme: Theme }) {
 
       {/* Projects Right Column*/}
       <div className="project-card-right">
-        <p className="project-description">{project.description}</p>
-        <div className="project-tags">
-          {project.tags.map((tag) => (
-            <span key={tag} className="project-tag">
-              {tag}
-            </span>
-          ))}
+        <div className="project-card-right-content">
+          <p className="project-description">{project.description}</p>
+          <div className="project-tags">
+            {project.tags.map((tag) => (
+              <span key={tag} className="project-tag">
+                {tag}
+              </span>
+            ))}
+          </div>
         </div>
         <div className="project-card-actions">
           <a
             href={project.code}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-project-discover"
+            className="btn btn-quaternary"
           >
             View code
           </a>

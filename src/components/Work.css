@@ -1,0 +1,26 @@
+.work-container {
+  padding: 8rem 0;
+}
+
+.work-container .section-title {
+  position: static;
+  transform: none;
+  left: auto;
+  top: auto;
+  text-align: center;
+  color: var(--light);
+  margin-bottom: 1.5rem;
+}
+
+.work-subtitle {
+  text-align: center;
+  color: var(--blurry);
+  font-size: 1.6rem;
+  margin: 0 0 5rem;
+}
+
+@media (max-width: 767px) {
+  .work-container {
+    padding: 6rem 0;
+  }
+}

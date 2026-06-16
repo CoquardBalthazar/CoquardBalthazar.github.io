@@ -3,8 +3,7 @@ import Intro from './components/Intro'
 import AboutMe from './components/AboutMe'
 import Skills from './components/Skills'
 import Experience from './components/Experiences'
-import TabBar from './components/TabBar'
-import Projects from './components/Projects'
+import Work from './components/Work'
 // import Contact from './components/Contact'
 // import Footer from './components/Footer'
 import ReturnToTop from './components/ReturnToTop'
@@ -17,9 +16,7 @@ function App() {
       <AboutMe />
       <Skills />
       <Experience />
-      <TabBar activeTab="projects" onTabChange={() => {}} />
-      <Projects />
-
+      <Work />
       {/* <Contact />
       <Footer /> */}
       <ReturnToTop />

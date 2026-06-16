@@ -352,60 +352,6 @@ p.skill {
   padding-top: 4rem;
 }
 
-h2.project-title {
-  margin: 0 0 5rem 0;
-}
-
-.project-cards {
-  display: flex;
-  flex-direction: row;
-  background-color: var(--dark);
-  height: 150rem; /* 30rem x5 */
-  width: 110rem;
-  padding: 0 0 0rem 0;
-  margin: 0 0 20rem 0;
-  border-radius: 0.75rem;
-}
-
-.project-column {
-  display: flex;
-  flex-direction: column;
-}
-
-.project-column.left {
-  background-color: var(--dark);
-  align-self: flex-start;
-  width: 50%;
-  height: 98%;
-  border-radius: 0.75rem;
-}
-.project-column.right {
-  background-color: var(--dark);
-  align-self: flex-end;
-  width: 50%;
-  height: 98%;
-  border-radius: 0.75rem;
-}
-
-.project-card {
-  height: 30rem;
-  width: 90%;
-  border-radius: 0.75rem;
-  padding: 5%;
-  position: relative;
-  display: flex;
-}
-
-.card-left-tertiary {
-  background-color: var(--tertiary-10);
-}
-.card-left-secondary {
-  background-color: var(--secondary-10);
-}
-.card-left-primary {
-  background-color: var(--primary-10);
-}
-
 .btn-demo-container {
   width: 10rem;
   height: calc(10rem * 0.4047); /*height-per-width ratio of the original image*/
@@ -525,16 +471,6 @@ span.category {
 }
 .card-right-primary {
   background-color: var(--primary-60);
-}
-
-.project-description {
-  color: var(--dark);
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  margin-bottom: 2rem;
 }
 
 .btn-project-discover {
@@ -879,101 +815,6 @@ p.to-do {
     align-items: center;
     text-align: center;
     padding-top: 4rem;
-  }
-
-  h2.project-title {
-    margin: 0 0 5rem 0;
-  }
-  .project-cards {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: var(--dark);
-    height: 300rem; /* 30rem x10 +1*15rem for Spacing before contact section */
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    border-radius: 0rem;
-    position: relative;
-  }
-
-  .project-column {
-    display: flex;
-    flex-direction: column;
-    height: 300rem;
-    gap: 30rem;
-    position: absolute;
-  }
-
-  .project-column.left {
-    background-color: transparent;
-    width: 100%;
-    height: 100%;
-    border-radius: 0.75rem;
-    top: 0;
-  }
-  .project-column.right {
-    background-color: transparent;
-    width: 100%;
-    height: 270rem; /*Spacing before contact section*/
-    border-radius: 0.75rem;
-
-    top: 30rem;
-  }
-
-  .project-card {
-    height: 30rem;
-    width: 100%;
-    border-radius: 0rem;
-    padding: 0;
-    position: relative;
-    display: flex;
-    z-index: 30;
-  }
-
-  #left-card1 {
-    border-radius: 0.75rem 0.75rem 0 0;
-  }
-  #left-card2 {
-    border-radius: 0;
-  }
-  #left-card3 {
-    border-radius: 0;
-  }
-  #left-card4 {
-    border-radius: 0;
-  }
-  #left-card5 {
-    border-radius: 0;
-  }
-
-  .h3-card-title-1l {
-    font-size: 4rem;
-  }
-
-  .h3-card-title-2l {
-    font-size: 4rem;
-  }
-
-  .project-description {
-    font-size: 1.6rem;
-  }
-
-  #right-card1 {
-    border-radius: 0;
-  }
-  #right-card2 {
-    border-radius: 0;
-  }
-  #right-card3 {
-    border-radius: 0;
-  }
-  #right-card4 {
-    border-radius: 0;
-  }
-  #right-card5 {
-    border-radius: 0 0 0 0;
   }
 
   /* Contact me*/

@@ -50,7 +50,7 @@ function Header() {
           className="navbar-item boxhead"
           onClick={() => setIsMenuOpen(false)}
         >
-          Projects
+          My Works
         </a>
         <Button
           config={letsTalk}
