@@ -142,16 +142,19 @@ Not yet started — in rough dependency order:
    `about-me-body`, `about-me-heading`. Generic classes (`div-bg-light`, `container`,
    `content-width`, unused `.about-me`) removed from `custom.css`. Text centered.
    Desktop height `45rem`, body padding `10rem 0`. Mobile: auto height, 75% width.
-4. **ProjectCard mobile overflow** — at <470px viewport, `.project-card-right` extends
-   to ~488px (scrollWidth 512px vs 400px viewport), causing horizontal scroll that makes
-   the mobile menu look like it has a right-side gap. Root cause diagnosed via Playwright
-   (2026-06-16): some child of `.project-card-right` has a min-content width > ~190px
-   forcing the flex panel wider than its allocated space. Fix deferred — tackle when
-   styling the Work/Projects section.
-5. **Experience section CSS** — prefill `ExperienceCard.css`/`Experience.css` per the
-   timeline design the user sketched (vertical line with colored dots per entry,
-   company name + role + period on the left, description bullets on the right). Full
-   visual design is a later pass — for now just get padding/structure right.
+4. **Projects section** — NEXT UP. Rebuild `ProjectCard.tsx` + `Projects.tsx` styling pass.
+   Also fix the mobile overflow bug: at <470px viewport, `.project-card-right` extends
+   to ~488px (scrollWidth 512px vs 400px viewport). Root cause: some child of
+   `.project-card-right` has min-content width > ~190px. Fix alongside the styling pass.
+5. ~~**Experience section CSS**~~ — DONE (2026-06-16).
+   - `Experiences.tsx` + `ExperienceCard.tsx` + `Experience.css` + `ExperienceCard.css` rebuilt.
+   - Timeline layout: 3-col grid desktop (left meta | dot/line | bullets), 2-col mobile (dot | stacked).
+   - Theme cycling via `THEMES[i % THEMES.length]` — `theme` removed from `Experience` type and JSON.
+   - `summary: string[]` field added to each entry (2 tight bullets) — rendered instead of full `description`.
+   - `experience-tag` class (own CSS) replaces `project-tag` for experience entries.
+   - `--secondary-30` (`#fcbad8`) and `--tertiary-30` (`#fce9bb`) added to both `:root` blocks in `custom.css`.
+   - SkillCard backgrounds upgraded from `-10` tints to `-30` tints for more brightness.
+   - Visible entries: TUM M.Sc. (Oct 2026), MEAG (2024–2026), COMPO IT (2024). Intern + Marketing hidden.
 6. **Skills redesign** — `SkillCard` component:
    - Card title = the **category** (one card per `categoryLabel`).
    - Card body = list of skills (`title`) in that category, **capped to however many

@@ -1,0 +1,77 @@
+.tab-bar {
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  justify-content: center;
+  margin-bottom: 6rem;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 0;
+  transition: color 0.15s;
+}
+
+/* unselected: everything quaternary-60 */
+.tab-btn .tab-bracket,
+.tab-btn .tab-label {
+  color: var(--quaternary-60);
+  transition: color 0.15s;
+}
+
+/* selected: label → light, brackets keep theme color */
+.tab-btn--active.tab-btn--tertiary .tab-bracket {
+  color: var(--tertiary);
+}
+.tab-btn--active.tab-btn--secondary .tab-bracket {
+  color: var(--secondary);
+}
+.tab-btn--active.tab-btn--primary .tab-bracket {
+  color: var(--primary-60);
+}
+
+.tab-btn--active .tab-label {
+  color: var(--light);
+  font-weight: 700;
+}
+
+/* hover: everything → theme color */
+.tab-btn--tertiary:hover .tab-bracket,
+.tab-btn--tertiary:hover .tab-label {
+  color: var(--tertiary);
+}
+
+.tab-btn--secondary:hover .tab-bracket,
+.tab-btn--secondary:hover .tab-label {
+  color: var(--secondary);
+}
+
+.tab-btn--primary:hover .tab-bracket,
+.tab-btn--primary:hover .tab-label {
+  color: var(--primary-60);
+}
+
+/* pressed/active state: everything → light */
+.tab-btn:active .tab-bracket,
+.tab-btn:active .tab-label {
+  color: var(--light);
+}
+
+@media (max-width: 767px) {
+  .tab-bar {
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+    margin-bottom: 4rem;
+  }
+
+  .tab-btn {
+    font-size: 2rem;
+  }
+}

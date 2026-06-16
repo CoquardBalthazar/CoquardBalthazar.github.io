@@ -16,7 +16,7 @@
 
 .skills-viewport {
   overflow: hidden;
-  width: 70%;
+  width: 80%;
 }
 
 .skills-track {
@@ -51,8 +51,11 @@
 
 /* ── Tablet (768–1023px) ──────────────────────────────── */
 @media (max-width: 1023px) and (min-width: 768px) {
+  .skills-section {
+    padding: 4rem 3rem 8rem;
+  }
   .skills-viewport {
-    width: 85%;
+    width: 75%;
   }
 }
 
