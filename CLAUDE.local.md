@@ -14,10 +14,19 @@
 - branch : refactor2026/phase3-up-to-down-rebuild (created off `dev` after merging
   `refactor2026/phase2-data-driven-content`)
 - broken : nothing currently broken
-- in progress : styling pass, top-to-bottom through `App.tsx`. Header + Intro + AboutMe
-  CSS split done. Tablet breakpoint for Intro done (15vw gap, 35% forms). AboutMe fully
-  migrated to `AboutMe.css` with new classnames (`about-me-section`, `about-me-body`,
-  `about-me-heading`). Next up: **Skills section** (carousel with arrow buttons).
+- in progress : styling pass, top-to-bottom through `App.tsx`. Header + Intro + AboutMe + Skills
+  all done. Next up: **Experience section** (timeline design: vertical line with colored dots,
+  company/role/period left, description bullets right).
+
+### Skills section — DONE (2026-06-16)
+- `SkillCard.tsx` + `SkillCard.css`: one card per category, bracket motif (`<h3>`/`</h3>`),
+  inline-code skill tags (`< Python >`), colored circle icon, theme cycling tertiary→secondary→primary.
+- `Skills.tsx`: carousel with `useVisibleCount()` hook — 3 visible desktop, 2 tablet, 1 mobile.
+  Track width + transform computed in JS inline style via `--num-cards` CSS custom property.
+  `useEffect` clamps `activeIndex` when breakpoint changes.
+- `Skills.css`: split background (light 56% top / dark bottom), `position: relative` for title anchor,
+  arrow buttons dark-filled with light SVG chevrons.
+- Category order: Languages → Data & ML → Infra & DevOps → Tools & Workflow → Frameworks & Libs → Databases.
 
 Note: phases 3–6 were reordered on 2026-06-13 (see `PLAN.md`):
 phase 3 = update content + new structure, phase 4 = mobile responsiveness,
@@ -43,7 +52,7 @@ phase 5 = Three.js demo (placed between AboutMe and Projects), phase 6 = EmailJS
   when we get there — avoid storing the filtered list in state).
 - **Component split heuristic**: don't extract a wrapper component just for
   "organization" — only split when there's a real reuse or content-separation reason.
-  (Decided against a separate `Navbar` component since `Header` *is* the navbar.)
+  (Decided against a separate `Navbar` component since `Header` _is_ the navbar.)
 - **`NAV_LINKS` extraction — DROPPED (2026-06-15)**: previously planned data-array
   extraction for the 4 nav links is no longer wanted; navbar markup stays inline in
   `Header.tsx` as-is. If the Phase-4 mobile tab bar needs a shared link list later,
@@ -69,51 +78,51 @@ phase 5 = Three.js demo (placed between AboutMe and Projects), phase 6 = EmailJS
 ## Phase 2 — completed this session
 
 - [x] **Data layer** — `src/data/type.ts` now has `Project`, `Hackathon`, `Skill`, `Game`,
-  `Experience`, `ButtonConfig`, all with a `visible: boolean` field.
+      `Experience`, `ButtonConfig`, all with a `visible: boolean` field.
 - [x] **`projects.json`** (7 entries) — games removed, `visible: true` added to all.
 - [x] **`games.json`** (new, 4 entries) — `pig-game`, `guess-my-number`, `blackjack`,
-  `lmu-bip-pong`. `Game` interface is a deliberate **exact mirror of `Project`**
-  (including `wip`/`featured`, even if unused for games right now) — kept for future
-  flexibility per user request, not because games currently need those fields.
+      `lmu-bip-pong`. `Game` interface is a deliberate **exact mirror of `Project`**
+      (including `wip`/`featured`, even if unused for games right now) — kept for future
+      flexibility per user request, not because games currently need those fields.
 - [x] **`skills.json`** (24 entries) — recategorized into 6 buckets, each skill now has
-  **two category fields**:
+      **two category fields**:
   - `category`: stable kebab-case identifier (`languages`, `frameworks-libraries`,
     `databases`, `devops-infrastructure`, `data-ml`, `tools-workflow`) — matches the
     `Skill.category` union type, used for grouping/keys.
-  - `categoryLabel`: human display string (`"Languages"`, `"Frameworks & Libraries"`,
+  - `categoryLabel`: human display string (`"Languages"`, `"Frameworks & Libs"`,
     `"Databases"`, `"Infra & DevOps"`, `"Data & ML"`, `"Tools & Workflow"`).
-  This `category`/`categoryLabel` pattern (stable id + display label) is reusable if
-  other JSON files need the same split later.
+    This `category`/`categoryLabel` pattern (stable id + display label) is reusable if
+    other JSON files need the same split later.
 - [x] **`experience.json`** (new) — 2 entries (TUM M.Sc. + MEAG), `Experience` interface:
-  `id, title, company, role, location, period, description: string[], tags, theme,
-  current, visible`. **MEAG bullets were filled in by the user with real detail** —
-  don't treat as placeholder anymore.
+      `id, title, company, role, location, period, description: string[], tags, theme,
+current, visible`. **MEAG bullets were filled in by the user with real detail** —
+      don't treat as placeholder anymore.
 - [x] **`buttons.json`** (new) — 4 `ButtonConfig` entries: `lets-talk` (secondary),
-  `download-cv` (secondary), `contact` (tertiary, `href: null` — EmailJS submit, not a
-  link), `view-code` (quaternary, `href: null` — per-project URL passed at call site).
-  All have a `download: string | null` field (HTML `download` attribute).
+      `download-cv` (secondary), `contact` (tertiary, `href: null` — EmailJS submit, not a
+      link), `view-code` (quaternary, `href: null` — per-project URL passed at call site).
+      All have a `download: string | null` field (HTML `download` attribute).
 - [x] **`ProjectCard.tsx` / `ProjectCard.css`** — two-panel staggered card layout (see
-  "Card & layout direction" below — **this superseded the 2026-06-10 single-background
-  direction**).
+      "Card & layout direction" below — **this superseded the 2026-06-10 single-background
+      direction**).
 - [x] **`Projects.tsx`** — wired via `.filter(p => p.visible).map(...)` over
-  `projects.json`, renders `<ProjectCard>`. Wrapper class renamed `.project-cards` →
-  `.project-list` (old fixed-size grid CSS was dead/conflicting); new `Projects.css`.
+      `projects.json`, renders `<ProjectCard>`. Wrapper class renamed `.project-cards` →
+      `.project-list` (old fixed-size grid CSS was dead/conflicting); new `Projects.css`.
 - [x] **`Experience.tsx` / `ExperienceCard.tsx`** (new) — same `.filter(visible).map()`
-  pattern, reuses `.project-tag` for tag pills, no dedicated CSS yet (styling pending,
-  see punch list).
+      pattern, reuses `.project-tag` for tag pills, no dedicated CSS yet (styling pending,
+      see punch list).
 - [x] **`Button.tsx` / `Button.css`** (new) — config-object-driven, polymorphic
-  (`<a>` if `href` resolved, `<button>` if not). Usage:
-  `<Button config={configObj} href={optionalOverride} onClick={...} className={...} />`.
-  `href` prop overrides `config.href` (used for `view-code`, where each project supplies
-  its own URL). `.btn-primary`/`.btn-secondary` moved here from `custom.css`;
-  `.btn-tertiary`/`.btn-quaternary` added (`.btn-quaternary` = old `.btn-project-discover`
-  look). All still first-pass/placeholder-ish, to be tuned visually.
+      (`<a>` if `href` resolved, `<button>` if not). Usage:
+      `<Button config={configObj} href={optionalOverride} onClick={...} className={...} />`.
+      `href` prop overrides `config.href` (used for `view-code`, where each project supplies
+      its own URL). `.btn-primary`/`.btn-secondary` moved here from `custom.css`;
+      `.btn-tertiary`/`.btn-quaternary` added (`.btn-quaternary` = old `.btn-project-discover`
+      look). All still first-pass/placeholder-ish, to be tuned visually.
 - [x] **`Header.tsx` / `Header.css`** — all navbar styles (incl. mobile media query)
-  moved out of `custom.css`. Nav fixed: "Experience" link now points to `#experience`
-  (was `#skills`); "Let's talk" now renders via `<Button config={letsTalk} ...>`.
-  Final nav order: About me · Experience · Projects · Let's talk.
+      moved out of `custom.css`. Nav fixed: "Experience" link now points to `#experience`
+      (was `#skills`); "Let's talk" now renders via `<Button config={letsTalk} ...>`.
+      Final nav order: About me · Experience · Projects · Let's talk.
 - [x] `tsconfig.app.json` — added `resolveJsonModule: true` (needed for `import x from
-  '*.json'`).
+'*.json'`).
 
 ### `Skill.category` mismatch — RESOLVED
 
@@ -152,7 +161,7 @@ Not yet started — in rough dependency order:
    - Arrows = image-based, same pattern as `ReturnToTop` (custom SVG asset + hover
      state), not text/unicode arrows.
    - Old skills markup to reuse as inspiration only (the `<span className="skill tag">
-     &lt;h3&gt;</span>` / horizontal-band structure from the previous version) — not a
+&lt;h3&gt;</span>` / horizontal-band structure from the previous version) — not a
      hard requirement, just shows prior visual intent (code-tag bracket motif).
 7. **Work section split** — currently `Projects.tsx`/`#projects`. Needs to become a
    tabbed section: **Hackathons / Projects / Games**, with **Projects pre-selected**.
@@ -177,6 +186,7 @@ Not yet started — in rough dependency order:
 ## Responsive design pass — Header + Intro (started 2026-06-15)
 
 Breakpoint convention adopted (Tailwind-style, decided this session):
+
 - **Mobile**: 0–767px (default, no media query prefix needed for desktop-first CSS)
 - **Tablet / rotated**: 768–1023px (`md:`)
 - **Desktop**: 1024px+ (`lg:`, i.e. the existing un-prefixed/default styles)
@@ -185,6 +195,7 @@ Existing `@media (max-width: 431px)` queries in `Header.css`, `Intro.css`, and
 `custom.css` were updated to `max-width: 767px` to match.
 
 ### Done
+
 - **Mobile centering fix (`Intro.css`)**: `.introduction.content` was `display: flex`
   with no `flex-direction` (defaults to row) plus a stray `align-self: flex-end` — so
   on mobile the h1/subtitle/social-icons/CV-button sat side-by-side, pushed right,
@@ -208,6 +219,7 @@ Existing `@media (max-width: 431px)` queries in `Header.css`, `Intro.css`, and
   possible follow-up if it reads as inconsistent once visible somewhere.
 
 ### Reverted — do NOT redo this combination
+
 A first attempt at the tablet (768–1023px) breakpoint also fixed the invalid
 `box-sizing: 'border-box'` (quoted string, line ~45 of `custom.css` — real bug,
 makes everything `content-box` instead of `border-box`). **This broke the CV button
@@ -218,6 +230,7 @@ properly, it needs a full pass over rem-based widths/paddings/heights, not a dri
 change.**
 
 ### Done (2026-06-16)
+
 - **Tablet (768–1023px) for Intro**: `padding-left: 15vw` (was `30rem`), forms width
   `35%` (was `50%`), `#h1-subtitle` now `max-width: 45rem; width: 100%`. No box-sizing
   touched.

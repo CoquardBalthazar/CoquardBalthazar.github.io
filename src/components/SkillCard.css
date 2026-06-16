@@ -1,0 +1,120 @@
+/* ── Card shell ───────────────────────────────────────── */
+.skill-card {
+  flex: 0 0 calc(100% / var(--num-cards));
+  box-sizing: border-box;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  border: 1px solid var(--dark);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  min-height: 30rem;
+}
+
+.skill-card-tertiary {
+  background-color: var(--tertiary-10);
+}
+.skill-card-secondary {
+  background-color: var(--secondary-10);
+}
+.skill-card-primary {
+  background-color: var(--primary-10);
+}
+
+/* ── Header (icon + title) ────────────────────────────── */
+.skill-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.skill-card-icon {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--light);
+  flex-shrink: 0;
+}
+
+.skill-card-icon-tertiary {
+  background-color: var(--tertiary);
+}
+.skill-card-icon-secondary {
+  background-color: var(--secondary);
+}
+.skill-card-icon-primary {
+  background-color: var(--primary);
+}
+
+.skill-card-title {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--dark);
+  margin: 0;
+}
+
+/* ── Body (band + content) ────────────────────────────── */
+.skill-card-body {
+  display: flex;
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.skill-card-band {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+.skill-band-tag {
+  font-family: 'FiraCode', monospace;
+  font-size: 1.1rem;
+  color: var(--dark);
+  opacity: 0.5;
+}
+
+.skill-band-line {
+  flex: 1;
+  width: 2px;
+  background-color: var(--dark);
+  opacity: 0.2;
+  margin: 0.3rem 0 0.3rem 0.4rem;
+}
+
+/* ── Skill list ───────────────────────────────────────── */
+.skill-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: flex-start;
+}
+
+.skill-tag {
+  font-family: 'FiraCode', monospace;
+  font-size: 1.3rem;
+  color: var(--dark);
+}
+
+/* ── Tablet (768–1023px): 2 cards visible → squarer shape  */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .skill-card {
+    min-height: 26rem;
+    padding: 2rem;
+  }
+}
+
+/* ── Mobile (≤767px) ──────────────────────────────────── */
+@media (max-width: 767px) {
+  .skill-card {
+    min-height: 28rem;
+    padding: 2rem;
+  }
+}

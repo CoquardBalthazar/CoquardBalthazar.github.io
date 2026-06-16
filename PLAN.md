@@ -85,9 +85,9 @@ data-driven sections (skills tile grid, hackathon timeline) rather than the old
   - `cpp_p1_vending_machine` — https://github.com/CoquardBalthazar/cpp_p1_vending_machine
   - `cpp_p2_boardgame` — https://github.com/CoquardBalthazar/cpp_p2_boardgame
   - `LMU_BiP` (Java/Processing Pong + 3 features) — https://github.com/CoquardBalthazar/LMU_BiP/tree/main
-- [ ] Replace the 3 generic skill cards with a skills tile grid, grouped by
-      `category` (languages / frameworks / devops) and `tier` (production / proficient /
-      comfortable / learning) — see updated `skills.json` schema below
+- [x] Replace the 3 generic skill cards with a skills carousel — 6 category cards
+      (`SkillCard.tsx`), arrow navigation, 3 visible on desktop / 2 on tablet / 1 on mobile.
+      Split background (light top / dark bottom). CSS isolated to `Skills.css` + `SkillCard.css`.
 - [ ] Add hackathon timeline section (`<HackathonCard>`, data from `hackathons.json`)
 - [ ] New section structure: confirm where Skills tile grid and Hackathon timeline sit
       relative to existing sections (About Me / Projects / Contact)
