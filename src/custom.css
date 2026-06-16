@@ -43,6 +43,7 @@
 html {
   font-size: 62.5%;
   box-sizing: 'border-box';
+  background-color: var(--dark);
 }
 
 /* header element + navbar styles moved to components/Header.css */
@@ -114,42 +115,6 @@ p {
 
 /* Button styles moved to components/Button.css (incremental CSS migration) */
 
-/* INTRODUCTION - Left : Content*/
-
-.introduction.control {
-  width: 100%;
-  height: 50rem;
-  display: flex;
-  gap: 2rem;
-  padding: 5rem 0;
-}
-
-.introduction.content {
-  width: 50%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  align-content: right;
-  padding: 2rem 0 2rem 30rem;
-}
-
-.introduction.logo-form {
-  width: 50%;
-  padding: 3rem;
-  display: block;
-}
-
-.img-intro {
-  display: block;
-}
-
-#h1-subtitle {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-  width: 45rem;
-}
-
 /* Style all font awesome icons */
 .social-media-control {
   display: flex;
@@ -188,11 +153,6 @@ p {
 .fa-google {
   background: #ea4335;
   color: white;
-}
-
-.btn-introduction {
-  margin: 2rem 0 3rem 0;
-  width: 15rem;
 }
 
 .container {
@@ -861,54 +821,11 @@ p.to-do {
 }
 
 /* Media Queries for Phone -------------------------------------------------------------------------------------------*/
-@media (max-width: 431px) {
+@media (max-width: 767px) {
   /* NAVBAR mobile styles moved to components/Header.css */
-
-  /*INTRODUCTION */
-  .introduction.control {
-    width: 100%;
-    height: 70rem;
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-  }
-
-  .introduction.content {
-    align-self: flex-end;
-    margin: 3rem 0 0 0;
-    width: 100%;
-    display: flex;
-    text-align: center;
-    align-content: center;
-    padding: 0;
-  }
-  .introduction.logo-form {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    min-height: 39rem;
-    padding: 0rem;
-  }
-  .img-intro {
-    display: block;
-    max-width: 100%; /* Optional: Ensure the image is responsive */
-  }
-
-  #h1-subtitle {
-    align-self: center;
-    margin-top: 5rem;
-    margin-bottom: 3rem;
-    width: 80%;
-  }
 
   .social-media-control {
     justify-content: center; /* Center horizontally */
-  }
-
-  .btn-introduction {
-    align-self: center;
-    margin: 3rem 0 3rem 0;
   }
 
   /* Skill*/

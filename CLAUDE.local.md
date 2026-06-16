@@ -9,13 +9,14 @@
 
 - [x] phase 0 : adding claude context
 - [x] phase 1 : migration scaffold — DONE, deployed via GitHub Actions to coquardbalthazar.github.io
-- [~] phase 2 : data-driven content — mostly done (see below). Phase 3 content (Experience
-      section, Hackathons/Projects/Games split, Work tabs) started early and is now
-      interleaved with the remaining Phase 2 styling pass.
-- branch : refactor2026/phase2-data-driven-content
+- [x] phase 2 : data-driven content — DONE, merged into `dev`.
+- [~] phase 3 : up-to-down rebuild (content + new structure + styling pass, interleaved).
+- branch : refactor2026/phase3-up-to-down-rebuild (created off `dev` after merging
+  `refactor2026/phase2-data-driven-content`)
 - broken : nothing currently broken
-- in progress : styling pass, top-to-bottom through `App.tsx`. Header done. Next up:
-  extract `NAV_LINKS` data array in `Header.tsx` (decided, not yet built), then `Intro`.
+- in progress : styling pass, top-to-bottom through `App.tsx`. Header + Intro CSS split
+  done, responsive (mobile/tablet) pass started for both. Next up: finish the tablet
+  breakpoint for Header+Intro (see "Responsive design pass" below), then `AboutMe`.
 
 Note: phases 3–6 were reordered on 2026-06-13 (see `PLAN.md`):
 phase 3 = update content + new structure, phase 4 = mobile responsiveness,
@@ -41,8 +42,11 @@ phase 5 = Three.js demo (placed between AboutMe and Projects), phase 6 = EmailJS
   when we get there — avoid storing the filtered list in state).
 - **Component split heuristic**: don't extract a wrapper component just for
   "organization" — only split when there's a real reuse or content-separation reason.
-  (Decided against a separate `Navbar` component since `Header` *is* the navbar; instead
-  extracting `NAV_LINKS` as a data array for reuse by the future Phase-4 mobile tab bar.)
+  (Decided against a separate `Navbar` component since `Header` *is* the navbar.)
+- **`NAV_LINKS` extraction — DROPPED (2026-06-15)**: previously planned data-array
+  extraction for the 4 nav links is no longer wanted; navbar markup stays inline in
+  `Header.tsx` as-is. If the Phase-4 mobile tab bar needs a shared link list later,
+  revisit then — don't pre-extract.
 
 ## Phase 1 — summary (done)
 
@@ -120,9 +124,11 @@ is now fixed by the `category`/`categoryLabel` split above. `Skills.tsx` can saf
 
 Not yet started — in rough dependency order:
 
-1. **`NAV_LINKS` extraction** in `Header.tsx` — data array + `.map()` for the 4 nav
-   links, decided this session, not yet built. Do this before moving to `Intro`.
-2. **Intro section** — styling pass + CSS split (next section top-to-bottom).
+1. ~~`NAV_LINKS` extraction~~ — DROPPED, see Build order & working agreements above.
+2. **Intro section** — CSS split DONE (`Intro.css` created, desktop+mobile rules moved
+   out of `custom.css`; shared `.social-media-control`/`.fa*` icon classes stayed in
+   `custom.css` since `Contact.tsx` reuses them). Mobile centering fixes DONE. **Tablet
+   breakpoint (768–1023px) still pending** — see "Responsive design pass" below.
 3. **AboutMe** — fix flexible height: currently has good top padding but not enough
    bottom padding; height should follow content, not be fixed.
 4. **Experience section CSS** — prefill `ExperienceCard.css`/`Experience.css` per the
@@ -158,6 +164,58 @@ Not yet started — in rough dependency order:
    file is `CVs_20260606_InDesign_EN_SE_WorkingStudent.pdf` (used as the `download`
    filename already). Need to confirm the real PDF lives in `public/assets/` and update
    `buttons.json`'s `href` to match.
+
+## Responsive design pass — Header + Intro (started 2026-06-15)
+
+Breakpoint convention adopted (Tailwind-style, decided this session):
+- **Mobile**: 0–767px (default, no media query prefix needed for desktop-first CSS)
+- **Tablet / rotated**: 768–1023px (`md:`)
+- **Desktop**: 1024px+ (`lg:`, i.e. the existing un-prefixed/default styles)
+
+Existing `@media (max-width: 431px)` queries in `Header.css`, `Intro.css`, and
+`custom.css` were updated to `max-width: 767px` to match.
+
+### Done
+- **Mobile centering fix (`Intro.css`)**: `.introduction.content` was `display: flex`
+  with no `flex-direction` (defaults to row) plus a stray `align-self: flex-end` — so
+  on mobile the h1/subtitle/social-icons/CV-button sat side-by-side, pushed right,
+  instead of stacking centered. Fixed to `flex-direction: column; align-items: center`.
+- **Mobile centering fix (`Header.css`)**: `.navbar-ctrl-brand` gets
+  `justify-content: center` (centers the `<Balthazar Coquard/>` logo within its box),
+  `.menu-icon` gets `align-items: center` (centers the 3 hamburger bars).
+- **Mobile menu full-width (`Header.css`)**: `.navbar-ctrl-items` (open mobile menu)
+  changed from `left: 50%; width: 100%; transform: translate(-50%,-50%)` to
+  `left: 0; width: 100vw; transform: translateY(-50%)` for guaranteed full-viewport width.
+- **Right-edge "gap" on mobile — FIXED via `html { background-color: var(--dark) }`**
+  (added in `custom.css`). Root cause: `body` had `background-color: var(--dark)` but
+  `html` didn't, so the vertical scrollbar's track area showed the browser's default
+  dark-grey canvas instead of the site's `--dark`, reading as a separate "gap" next to
+  the page content. This was **not** a layout/width bug — don't re-chase it as one.
+- **Button hover/active unification (`Button.css`)**: `.btn-primary` and
+  `.btn-secondary` hover/active now match `.btn-quaternary`/`.btn-project-discover`:
+  hover → `background: var(--primary-10); color: var(--dark); border-color: var(--dark)`,
+  active → `background: var(--dark); color: var(--light)`. Replaces the old
+  "transparent background on hover" look. `.btn-tertiary` not yet updated to match —
+  possible follow-up if it reads as inconsistent once visible somewhere.
+
+### Reverted — do NOT redo this combination
+A first attempt at the tablet (768–1023px) breakpoint also fixed the invalid
+`box-sizing: 'border-box'` (quoted string, line ~45 of `custom.css` — real bug,
+makes everything `content-box` instead of `border-box`). **This broke the CV button
+width and the Intro section height** (content overflowed into AboutMe) because the
+whole site's rem-based widths/paddings were tuned assuming `content-box`. Both the
+box-sizing fix and the tablet block were reverted. **If `box-sizing` is ever fixed
+properly, it needs a full pass over rem-based widths/paddings/heights, not a drive-by
+change.**
+
+### Still pending
+- **Tablet (768–1023px) for Intro**: desktop layout already applies by default at
+  ≥768px (row layout, 50/50 split) — no Header changes needed (hamburger menu only
+  shows ≤767px). For Intro, still need to: reduce `.introduction.content`'s
+  `padding: 2rem 0 2rem 30rem` (300px left padding, way too much at 768px) to
+  something small (~3rem), and make `#h1-subtitle` (currently fixed `width: 45rem` =
+  450px) responsive so it doesn't overflow its ~50%-width column. Redo this **without**
+  touching `box-sizing`.
 
 ## Card & layout direction (SUPERSEDED 2026-06-10 decision — current as of this session)
 

@@ -1,5 +1,12 @@
 {
   "permissions": {
-    "allow": ["PowerShell(Get-ChildItem *)"]
+    "allow": [
+      "PowerShell(Get-ChildItem *)",
+      "Bash(mkdir -p /tmp/pw-inspector)",
+      "Read(//tmp/**)",
+      "Bash(npm init *)",
+      "Bash(npm install *)",
+      "Bash(npx playwright *)"
+    ]
   }
 }
