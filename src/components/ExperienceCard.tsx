@@ -1,28 +1,41 @@
 import type { Experience } from '../data/type'
+import './ExperienceCard.css'
 
-function ExperienceCard({ experience }: { experience: Experience }) {
+type Theme = 'primary' | 'secondary' | 'tertiary'
+
+interface Props {
+  experience: Experience
+  theme: Theme
+}
+
+function ExperienceCard({ experience, theme }: Props) {
   return (
-    <div className={`experience-card experience-card-${experience.theme}`}>
-      <div className="experience-card-header">
-        <h3 className="experience-card-title">{experience.title}</h3>
-        <span className="experience-card-role">{experience.role}</span>
-        <span className="experience-card-meta">
-          {experience.location} · {experience.period}
-        </span>
+    <div className="experience-entry">
+      <div className="experience-left">
+        <div className="exp-meta">
+          <h3 className="exp-company">{experience.title}</h3>
+          <span className={`exp-role exp-role-${theme}`}>{experience.role}</span>
+        </div>
+        <span className="exp-period">{experience.period}</span>
       </div>
 
-      <ul className="experience-card-description">
-        {experience.description.map((point, index) => (
-          <li key={index}>{point}</li>
-        ))}
-      </ul>
+      <div className="experience-timeline">
+        <div className={`experience-dot experience-dot-${theme}`} />
+      </div>
 
-      <div className="experience-card-tags">
-        {experience.tags.map((tag) => (
-          <span key={tag} className="project-tag">
-            {tag}
-          </span>
-        ))}
+      <div className="experience-right">
+        <ul className="exp-description">
+          {experience.summary.map((point, i) => (
+            <li key={i}>{point}</li>
+          ))}
+        </ul>
+        <div className="exp-tags">
+          {experience.tags.map((tag) => (
+            <span key={tag} className="experience-tag">
+              {tag}
+            </span>
+          ))}
+        </div>
       </div>
     </div>
   )

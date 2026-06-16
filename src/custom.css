@@ -155,7 +155,6 @@ p {
   color: white;
 }
 
-
 /* -- Skills -- section */
 .skill.section-control {
   height: 70rem;
@@ -799,7 +798,6 @@ p.to-do {
     justify-content: center; /* Center horizontally */
   }
 
-
   .skill.section-control {
     display: flex;
     flex-direction: column;
@@ -814,6 +812,7 @@ p.to-do {
   h2.section-title {
     display: flex;
     align-items: center;
+    justify-content: center;
     margin: 0 auto; /* Center horizontally */
     padding: 1rem;
     margin: 0 auto; /* Center horizontally */

@@ -52,7 +52,7 @@
 /* ── Tablet (768–1023px) ──────────────────────────────── */
 @media (max-width: 1023px) and (min-width: 768px) {
   .skills-viewport {
-    width: 75%;
+    width: 85%;
   }
 }
 
@@ -60,11 +60,8 @@
 @media (max-width: 767px) {
   .skills-section {
     padding: 4rem 1.5rem;
-  background: linear-gradient(to bottom, var(--light) 60%, var(--dark) 40%);
-}
-
+    background: linear-gradient(to bottom, var(--light) 60%, var(--dark) 40%);
   }
-
   .skills-viewport {
     width: 100%;
   }

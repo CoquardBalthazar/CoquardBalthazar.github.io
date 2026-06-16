@@ -1,12 +1,14 @@
 import type { Project } from '../data/type'
 import './ProjectCard.css'
 
-function ProjectCard({ project }: { project: Project }) {
+type Theme = 'primary' | 'secondary' | 'tertiary'
+
+function ProjectCard({ project, theme }: { project: Project; theme: Theme }) {
   return (
-    <div className={`project-card project-card-${project.theme}`}>
+    <div className={`project-card project-card-${theme}`}>
       {/* Projects Left Column*/}
       <div className="project-card-left">
-        <span className={`card-category highlight-box-shadow ${project.theme}`}>
+        <span className={`card-category highlight-box-shadow ${theme}`}>
           {project.category}
         </span>
         <h3 className="project-card-title">{project.title}</h3>
