@@ -14,9 +14,8 @@
 - branch : refactor2026/phase3-up-to-down-rebuild (created off `dev` after merging
   `refactor2026/phase2-data-driven-content`)
 - broken : nothing currently broken
-- in progress : styling pass, top-to-bottom through `App.tsx`. Header + Intro + AboutMe + Skills
-  all done. Next up: **Experience section** (timeline design: vertical line with colored dots,
-  company/role/period left, description bullets right).
+- in progress : styling pass, top-to-bottom through `App.tsx`. Header + Intro + AboutMe + Skills + Experience
+  all done. Next up: **Projects section** (rebuild ProjectCard + Projects styling pass, mobile overflow fix).
 
 ### Skills section — DONE (2026-06-16)
 - `SkillCard.tsx` + `SkillCard.css`: one card per category, bracket motif (`<h3>`/`</h3>`),
