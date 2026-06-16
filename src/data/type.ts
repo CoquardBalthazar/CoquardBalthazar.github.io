@@ -4,7 +4,6 @@ export interface Project {
   category: string
   tags: string[]
   year: number
-  theme: 'primary' | 'secondary' | 'tertiary'
   description: string
   wip: boolean | null
   live: boolean
@@ -21,7 +20,6 @@ export interface Hackathon {
   year: number
   date: string
   project: string
-  theme: 'primary' | 'secondary' | 'tertiary'
   description: string
   tags: string[]
   teamSize: number
@@ -56,7 +54,6 @@ export interface Game {
   category: string
   tags: string[]
   year: number
-  theme: 'primary' | 'secondary' | 'tertiary'
   description: string
   wip: boolean | null
   live: boolean
@@ -84,8 +81,8 @@ export interface Experience {
   location: string
   period: string
   description: string[]
+  summary: string[]
   tags: string[]
-  theme: 'primary' | 'secondary' | 'tertiary'
   current: boolean
   visible: boolean
 }
