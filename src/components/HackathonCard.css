@@ -21,3 +21,21 @@
   background-color: var(--dark);
   color: var(--light);
 }
+
+.hackathon-left-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.hackathon-meta-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 1.5rem;
+}

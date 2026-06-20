@@ -1,7 +1,7 @@
 [
   {
     "id": "hack-1",
-    "title": "Yellow VC / Project A / TUM.ai Hackathon",
+    "title": "Yellow VC / Project A / TUM.ai",
     "year": 2026,
     "date": "2026-05",
     "project": "VC Deal Sourcing Tool",
@@ -11,7 +11,7 @@
     "role": "Full-stack",
     "result": "2nd place",
     "live": false,
-    "code": null,
+    "code": "https://github.com/davidheundl/vc_social_sourcing",
     "demo": null,
     "screenshot": null,
     "visible": true
@@ -28,7 +28,7 @@
     "role": "Support",
     "result": "Participant",
     "live": false,
-    "code": null,
+    "code": "https://github.com/LinkBOTW17/Computer-Vision-Deforestation-Detector",
     "demo": null,
     "screenshot": null,
     "visible": true

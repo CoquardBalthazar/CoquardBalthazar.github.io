@@ -14,8 +14,8 @@
 - branch : refactor2026/phase3-up-to-down-rebuild (created off `dev` after merging
   `refactor2026/phase2-data-driven-content`)
 - broken : nothing currently broken
-- in progress : styling pass, top-to-bottom through `App.tsx`. Header + Intro + AboutMe + Skills + Experience
-  all done. Next up: **Projects section** (rebuild ProjectCard + Projects styling pass, mobile overflow fix).
+- in progress : styling pass, top-to-bottom through `App.tsx`. Header + Intro + AboutMe + Skills + Experience + Work/Projects
+  all done (desktop). Next up: **HackathonCard + GameCard desktop styling pass**, then **mobile/tablet CSS for all three card types**.
 
 ### Skills section — DONE (2026-06-16)
 - `SkillCard.tsx` + `SkillCard.css`: one card per category, bracket motif (`<h3>`/`</h3>`),
@@ -142,10 +142,7 @@ Not yet started — in rough dependency order:
    `about-me-body`, `about-me-heading`. Generic classes (`div-bg-light`, `container`,
    `content-width`, unused `.about-me`) removed from `custom.css`. Text centered.
    Desktop height `45rem`, body padding `10rem 0`. Mobile: auto height, 75% width.
-4. **Projects section** — NEXT UP. Rebuild `ProjectCard.tsx` + `Projects.tsx` styling pass.
-   Also fix the mobile overflow bug: at <470px viewport, `.project-card-right` extends
-   to ~488px (scrollWidth 512px vs 400px viewport). Root cause: some child of
-   `.project-card-right` has min-content width > ~190px. Fix alongside the styling pass.
+4. ~~**Projects section**~~ — DONE (2026-06-20). See "Work section — DONE" below.
 5. ~~**Experience section CSS**~~ — DONE (2026-06-16).
    - `Experiences.tsx` + `ExperienceCard.tsx` + `Experience.css` + `ExperienceCard.css` rebuilt.
    - Timeline layout: 3-col grid desktop (left meta | dot/line | bullets), 2-col mobile (dot | stacked).
@@ -165,19 +162,7 @@ Not yet started — in rough dependency order:
    - Old skills markup to reuse as inspiration only (the `<span className="skill tag">
 &lt;h3&gt;</span>` / horizontal-band structure from the previous version) — not a
      hard requirement, just shows prior visual intent (code-tag bracket motif).
-7. **Work section split** — currently `Projects.tsx`/`#projects`. Needs to become a
-   tabbed section: **Hackathons / Projects / Games**, with **Projects pre-selected**.
-   - `TabBar` component: dumb/controlled, renders `[ Label ]` bracket-style buttons,
-     parent (`Work`?) owns `useState` for active tab and conditionally renders
-     `<Hackathons>` / `<Projects>` / `<Games>`.
-   - Need new `GameCard.tsx` (mirrors `ProjectCard`, `Game` type already defined)
-     consuming `games.json`.
-   - Need `HackathonCard.tsx` (data ready since Phase 2, component not built).
-   - **Open question**: section anchor id — nav currently links to `#projects`: decide
-     whether the tabbed wrapper section keeps `id="projects"` or becomes `id="work"`
-     (would need a `Header.tsx` nav update either way).
-   - Tab bar visual reference: bracket-style `[ Hackathons ] [ Projects ] [ Games ]`,
-     active tab bold/colored (pink in reference screenshot).
+7. ~~**Work section split**~~ — DONE (2026-06-20). See "Work section — DONE" below.
 8. **Contact section** — wire `contact` button (`buttons.json`, `href: null`) to
    EmailJS submit handler.
 9. **`download-cv` button** — `href` is still the placeholder `/assets/cv.pdf`; actual
@@ -256,6 +241,42 @@ in `ProjectCard.css`:
 - `btn-play` → `btn-demo` rename (done 2026-06-14) still applies — the pixel-art "PLAY"
   button asset is `public/assets/btn-demo.svg`/`btn-demo-hover.svg`. Likely reused for
   the Games tab's demo links.
+
+## Work section — DONE (desktop only, 2026-06-20)
+
+- `Work.tsx` + `Work.css` — wrapper section (`id="projects"`), owns `useState<WorkTab>('projects')`.
+  Renders `<TabBar>` + conditionally `<Hackathons>` / `<Projects>` / `<Games>`.
+  Title uses `.section-title` class (same as Experience), with subtitle `.work-subtitle`.
+  Nav link in `Header.tsx` updated to "My Works" (href stays `#projects`).
+- `TabBar.tsx` + `TabBar.css` — controlled, bracket-style `[ Hackathons ] [ Projects ] [ Games ]`.
+  Each tab has a theme class (`tab-btn--tertiary/secondary/primary`).
+  Unselected: `--quaternary-60`. Selected: label = `--light`, brackets = theme `-60` color.
+  Hover: everything = theme `-60` color. Pressed: everything = `--light`.
+  Desktop: horizontal row. Mobile (`≤767px`): stacked column.
+- `Projects.tsx` — stripped to a pure card-list div (no section/title, those live in Work).
+- `Games.tsx` + `Hackathons.tsx` — thin wrappers, same `.filter(visible).map()` pattern.
+- `GameCard.tsx` — exact mirror of `ProjectCard`, imports `ProjectCard.css`.
+- `HackathonCard.tsx` + `HackathonCard.css` — same two-panel layout, badge = `role` field,
+  adds `hackathon-project-name` (bold project title), `hackathon-meta` (year · team size),
+  `hackathon-result` pill. Imports `ProjectCard.css` for shared panel/tag/button styles.
+- `ProjectCard.css` (desktop, finalized 2026-06-20):
+  - `.project-list`: 85% width, centered via `margin: 0 auto`, column flex, no gap between cards.
+  - `.project-card`: `display: flex; align-items: stretch; min-height: 30rem`.
+  - Left panel: `flex: 0 0 32%`, `position: relative`. Category badge: `position: absolute; top: 3rem; left: 3rem`.
+    Title centered, `3.2rem`.
+  - Right panel: `flex: 0 0 68%`, `margin-top: 2rem; margin-bottom: -2rem` (stagger effect — starts AND ends 2rem lower, same height as left).
+    Inner layout: row with `.project-card-right-content` (flex: 1, min-width: 0, centered column) + `.project-card-actions` (flex column, shrink: 0).
+  - View Code button: `btn-quaternary` class.
+  - Old project CSS removed from `custom.css` (`.project-cards`, `.project-column`, `.project-card`,
+    `.card-left-*`, `h2.project-title`, all `#left-card*`/`#right-card*`, `.h3-card-title-*`,
+    `.project-description` — all dead code from the pre-React version).
+
+### Next up — HackathonCard + GameCard desktop styling pass
+
+`HackathonCard` and `GameCard` reuse `ProjectCard.css` for the panel/tag/button layout.
+They render correctly but haven't had a dedicated visual review pass yet — do this before mobile.
+After that: **mobile + tablet CSS for all three card types** (column layout + `position: sticky; top: 0`
+for the card-stack scroll effect).
 
 ## Phase 4 direction (decided 2026-06-10, renumbered 2026-06-13, for later)
 

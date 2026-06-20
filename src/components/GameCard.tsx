@@ -12,15 +12,16 @@ function GameCard({ game, theme }: { game: Game; theme: Theme }) {
         </span>
         <h3 className="project-card-title">{game.title}</h3>
       </div>
-
       <div className="project-card-right">
-        <p className="project-description">{game.description}</p>
-        <div className="project-tags">
-          {game.tags.map((tag) => (
-            <span key={tag} className="project-tag">
-              {tag}
-            </span>
-          ))}
+        <div className="project-card-right-content">
+          <p className="project-description">{game.description}</p>
+          <div className="project-tags">
+            {game.tags.map((tag) => (
+              <span key={tag} className="project-tag">
+                {tag}
+              </span>
+            ))}
+          </div>
         </div>
         <div className="project-card-actions">
           {game.code && (

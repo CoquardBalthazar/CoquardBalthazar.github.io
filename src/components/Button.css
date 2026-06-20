@@ -73,3 +73,12 @@
   background-color: var(--dark);
   color: var(--light);
 }
+
+/* Tablet —  */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .btn {
+    font-size: 1.9rem;
+    padding: 0.7rem 1.6rem;
+    min-width: 7rem;
+  }
+}

@@ -1,5 +1,5 @@
 .work-container {
-  padding: 8rem 0;
+  padding: 12rem 0;
 }
 
 .work-container .section-title {
@@ -19,8 +19,16 @@
   margin: 0 0 5rem;
 }
 
+/* existing mobile block — add padding-bottom: 0 */
 @media (max-width: 767px) {
   .work-container {
-    padding: 6rem 0;
+    padding: 6rem 0 0;
+  }
+}
+
+/* new tablet block */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .work-container {
+    padding: 10rem 0;
   }
 }

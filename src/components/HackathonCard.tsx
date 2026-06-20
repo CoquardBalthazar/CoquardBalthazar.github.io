@@ -17,25 +17,31 @@ function HackathonCard({
         <span className={`card-category highlight-box-shadow ${theme}`}>
           {hackathon.role}
         </span>
-        <h3 className="project-card-title">{hackathon.title}</h3>
-        <p className="hackathon-meta">
-          {hackathon.year} · {hackathon.teamSize} people
-        </p>
+        <div className="hackathon-left-body">
+          <h3 className="project-card-title">{hackathon.title}</h3>
+          <div className="hackathon-meta-row">
+            <p className="hackathon-meta">
+              {hackathon.year} · {hackathon.teamSize} people
+            </p>
+            {hackathon.result && (
+              <span className="hackathon-result">{hackathon.result}</span>
+            )}
+          </div>
+        </div>
       </div>
 
       <div className="project-card-right">
-        <p className="hackathon-project-name">{hackathon.project}</p>
-        <p className="project-description">{hackathon.description}</p>
-        <div className="project-tags">
-          {hackathon.tags.map((tag) => (
-            <span key={tag} className="project-tag">
-              {tag}
-            </span>
-          ))}
+        <div className="project-card-right-content">
+          <p className="hackathon-project-name">{hackathon.project}</p>
+          <p className="project-description">{hackathon.description}</p>
+          <div className="project-tags">
+            {hackathon.tags.map((tag) => (
+              <span key={tag} className="project-tag">
+                {tag}
+              </span>
+            ))}
+          </div>
         </div>
-        {hackathon.result && (
-          <span className="hackathon-result">{hackathon.result}</span>
-        )}
         <div className="project-card-actions">
           {hackathon.code && (
             <a
