@@ -1,0 +1,41 @@
+.hackathon-meta {
+  font-size: 1.3rem;
+  color: var(--dark);
+  opacity: 0.6;
+  margin: 0;
+}
+
+.hackathon-project-name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0;
+}
+
+.hackathon-result {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 0.3rem 1rem;
+  border-radius: 1rem;
+  background-color: var(--dark);
+  color: var(--light);
+}
+
+.hackathon-left-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.hackathon-meta-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 1.5rem;
+}

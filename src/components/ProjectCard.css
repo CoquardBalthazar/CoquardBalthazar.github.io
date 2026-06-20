@@ -1,0 +1,218 @@
+/* ProjectCard: centered 80vw, no gap between cards, 30/70 split */
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.project-card {
+  display: flex;
+  align-items: stretch;
+  min-height: 26rem;
+}
+
+/* Left panel — 30% */
+.project-card-left {
+  flex: 0 0 30%;
+  box-sizing: border-box;
+  border-radius: 0;
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+/* Right panel — 70%, two-column inner layout, staggered down */
+.project-card-right {
+  flex: 0 0 70%;
+  box-sizing: border-box;
+  border-radius: 0;
+  padding: 3rem 2.5rem;
+  margin-top: 2rem;
+  margin-bottom: -2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.project-card-right-content {
+  flex: 0 0 70%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  text-align: center;
+}
+
+.project-card-right-content .project-tags {
+  justify-content: center;
+}
+
+.project-card-actions {
+  display: flex;
+  flex: 0 0 30%;
+  /* margin-right: 3rem; */
+  padding-right: 3rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  flex-shrink: 0;
+}
+
+/* theme color pairs */
+.project-card-primary .project-card-left {
+  background-color: var(--primary-10);
+}
+.project-card-primary .project-card-right {
+  background-color: var(--primary-60);
+}
+
+.project-card-secondary .project-card-left {
+  background-color: var(--secondary-10);
+}
+.project-card-secondary .project-card-right {
+  background-color: var(--secondary);
+}
+
+.project-card-tertiary .project-card-left {
+  background-color: var(--tertiary-10);
+}
+.project-card-tertiary .project-card-right {
+  background-color: var(--tertiary);
+}
+
+/* Category badge — same font-size as label, no oversizing */
+.project-card-left .card-category {
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+  margin: 0;
+  font-size: 2.4rem;
+  padding: 0.3rem 0rem;
+}
+
+/* Title — centered, bigger */
+.project-card-title {
+  font-size: 3.2rem;
+  color: var(--dark);
+  margin: 0;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* Description */
+.project-card-right .project-description {
+  width: 80%;
+  margin: 0;
+  font-size: 1.8rem;
+  color: var(--dark);
+}
+
+/* Tags */
+.project-tags {
+  display: flex;
+  width: 80%;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-tag {
+  background-color: var(--dark);
+  color: var(--light);
+  font-size: 1.2rem;
+  padding: 0.3rem 1rem;
+  border-radius: 1rem;
+}
+
+/* Demo button container */
+.project-card-actions .btn-demo-container {
+  position: static;
+  transform: none;
+}
+
+/* Tablet — stack panels vertically, no sticky yet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .project-list {
+    width: 100%;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .project-list {
+    width: 100%;
+  }
+
+  .project-card-right-content {
+    flex: 0 0 75%;
+  }
+
+  .project-card-actions {
+    flex: 0 0 25%;
+  }
+  /* .project-list {
+    position: relative;
+  }
+
+  .project-card {
+    position: sticky;
+    top: 0;
+  } */
+}
+
+/* Mobile — stack panels vertically, sticky */
+@media (max-width: 767px) {
+  .project-list {
+    width: 100%;
+  }
+
+  .project-card {
+    flex-direction: column;
+  }
+
+  .project-card-left,
+  .project-card-right {
+    flex: none;
+    width: 100%;
+  }
+
+  .project-card-left {
+    justify-content: flex-start;
+    padding-top: 4.5rem;
+  }
+  .project-card-left .card-category {
+    top: 1.5rem;
+  }
+
+  .project-card-right {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .project-card-actions {
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    padding-right: 0;
+  }
+
+  .project-list {
+    position: relative;
+  }
+
+  .project-card {
+    position: sticky;
+    top: 0;
+  }
+}

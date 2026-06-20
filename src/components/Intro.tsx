@@ -1,3 +1,5 @@
+import './Intro.css'
+
 function Intro() {
   return (
     <section id="introduction">
@@ -8,9 +10,10 @@ function Intro() {
             <span>{"{I'm Balthazar}"}</span>
           </h1>
           <p className="font-light" id="h1-subtitle">
-            Currently searching for a Junior Software position (Werkstudent /
-            Intern) to expand my programming know-how! <br />
-            Avid to learn from you, thrilled to get to know you !
+            Looking for a <i>[Software Engineering Werkstudent]</i> role in
+            Munich.
+            <br /> I love building things, and I want to build bigger ones with
+            you.
           </p>
 
           {/* Social Network button */}
@@ -33,7 +36,7 @@ function Intro() {
             ></a>
           </div>
           <a
-            href="/assets/CVs_20260606_InDesign_EN_SE_WorkingStudent.pdf"
+            href="/assets/cv.pdf"
             download="CVs_20260606_InDesign_EN_SE_WorkingStudent.pdf"
             className="btn btn-secondary btn-introduction"
           >

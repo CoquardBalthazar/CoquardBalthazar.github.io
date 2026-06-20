@@ -2,7 +2,8 @@ import Header from './components/Header'
 import Intro from './components/Intro'
 import AboutMe from './components/AboutMe'
 import Skills from './components/Skills'
-import Projects from './components/Projects'
+import Experience from './components/Experiences'
+import Work from './components/Work'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ReturnToTop from './components/ReturnToTop'
@@ -14,7 +15,8 @@ function App() {
       <Intro />
       <AboutMe />
       <Skills />
-      <Projects />
+      <Experience />
+      <Work />
       <Contact />
       <Footer />
       <ReturnToTop />

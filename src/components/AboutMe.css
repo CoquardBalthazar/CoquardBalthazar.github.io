@@ -1,0 +1,41 @@
+/* ABOUT ME section */
+
+.about-me-section {
+  background-color: var(--light);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 45rem;
+}
+
+.about-me-body {
+  width: 70rem;
+  display: flex;
+  flex-direction: column;
+  padding: 10rem 0;
+  text-align: center;
+}
+
+.about-me-heading {
+  margin: 0 0 4rem 0;
+  padding: 0 0 0 0;
+}
+
+/* Media Queries for Phone */
+@media (max-width: 767px) {
+  .about-me-section {
+    height: auto;
+  }
+
+  .about-me-body {
+    width: 75%;
+    padding: 10rem 0 8rem 0;
+  }
+
+  .about-me-heading {
+    margin: 0 0 4rem 0;
+    padding: 0 0 0 0;
+  }
+}

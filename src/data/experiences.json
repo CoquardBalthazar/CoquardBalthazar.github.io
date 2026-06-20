@@ -1,0 +1,108 @@
+[
+  {
+    "id": "tum-msc-management-technology",
+    "title": "TU München",
+    "company": "Technical University of Munich",
+    "role": "M.Sc. Management & Technology",
+    "location": "Munich, Germany",
+    "period": "Oct 2026",
+    "summary": [
+      "M.Sc. combining software engineering, technology management, and entrepreneurship.",
+      "Continuing the business → CS pivot with a structured academic foundation."
+    ],
+    "description": [
+      "Master's program combining computer science, engineering, and business management.",
+      "Focus areas: software engineering, technology management, and entrepreneurship."
+    ],
+    "tags": ["TUM", "M.Sc.", "Management & Technology"],
+    "current": false,
+    "visible": true
+  },
+  {
+    "id": "meag-risk-models-analytics",
+    "title": "MEAG GmbH",
+    "company": "MEAG MUNICH ERGO AssetManagement GmbH",
+    "role": "Working Student — Risk Models & Analytics",
+    "location": "Munich, Germany",
+    "period": "Sept 2024 – Sept 2026",
+    "summary": [
+      "Rebuilt a liquidity scoring model (R → Python/Databricks) and co-led a credit-risk ETL pipeline in PySpark, replacing a legacy MS Access solution.",
+      "Designed the full engineering stack: medallion architecture, unit tests, CI integration, and technical docs with Sphinx."
+    ],
+    "description": [
+      "Independently redeveloped a liquidity scoring model (Liquiscore), reimplementing an existing R codebase in Python on Databricks",
+      "Co-led design and development of a credit-risk ETL pipeline (PRIME) in Python + PySpark, replacing a legacy MS Access solution",
+      "Designed a medallion architecture (bronze/silver/gold) with object-oriented table abstractions, integrated into Databricks Jobs.",
+      "Built the full testing pipeline: mock-data generation (CSV/Parquet), unit tests (unittest/pytest), tox config, and CI integration; authored technical docs with Sphinx.",
+      "Set up environment-agnostic, config-based parameterization; version control via Git, PRs, and Azure DevOps."
+    ],
+    "tags": [
+      "Python",
+      "PySpark",
+      "SQL",
+      "Databricks",
+      "Azure DevOps",
+      "CI/CD",
+      "Git",
+      "R",
+      "Sphinx",
+      "pytest"
+    ],
+    "current": true,
+    "visible": true
+  },
+  {
+    "id": "compo-it-application-management",
+    "title": "COMPO GmbH",
+    "company": "COMPO GmbH",
+    "role": "Working Student — IT Application Management",
+    "location": "Münster, Germany",
+    "period": "Apr 2024 – Aug 2024",
+    "summary": [
+      "Built and designed internal request-form applications with Microsoft Power Apps."
+    ],
+    "description": [
+      "Built internal request form applications using Microsoft Power Apps.",
+      "Handled UI/UX design and implementation of the forms."
+    ],
+    "tags": ["Power Apps", "UI/UX", "Microsoft 365"],
+    "current": false,
+    "visible": true
+  },
+  {
+    "id": "compo-internship",
+    "title": "COMPO GmbH",
+    "company": "COMPO GmbH",
+    "role": "Intern — IT, Marketing & Controlling",
+    "location": "Münster, Germany",
+    "period": "Oct 2023 – Feb 2024",
+    "summary": [
+      "Rotational internship across five departments — IT, Marketing, Brand Strategy, Digital, and Controlling — one month each."
+    ],
+    "description": [
+      "Rotational internship across five departments: International Marketing, IT, Brand Strategy & PR, Digital Marketing, and Controlling.",
+      "One month per department, gaining cross-functional exposure to business operations and digital tools."
+    ],
+    "tags": ["Marketing", "IT", "Controlling", "Brand Strategy"],
+    "current": false,
+    "visible": false
+  },
+  {
+    "id": "compo-marketing-werkstudent",
+    "title": "COMPO GmbH",
+    "company": "COMPO GmbH",
+    "role": "Working Student — Marketing Support",
+    "location": "Münster, Germany",
+    "period": "Sept 2022 – Feb 2023",
+    "summary": [
+      "Produced content for the French brand website and managed social media accounts and SEO."
+    ],
+    "description": [
+      "Created content for the French brand website.",
+      "Managed social media accounts and handled web referencing and SEO."
+    ],
+    "tags": ["Content Creation", "Social Media", "SEO", "French"],
+    "current": false,
+    "visible": false
+  }
+]

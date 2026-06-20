@@ -1,0 +1,51 @@
+.experience-section {
+  background-color: var(--dark);
+  padding: 5rem 0 6rem;
+}
+
+.experience-section .section-title {
+  position: static;
+  transform: none;
+  left: auto;
+  top: auto;
+  text-align: center;
+  color: var(--light);
+  margin-bottom: 4rem;
+}
+
+/* Vertical line running through all entries */
+.experience-list {
+  position: relative;
+  width: 85%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.experience-list::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background-color: var(--blurry);
+  transform: translateX(-50%);
+  opacity: 0.4;
+}
+
+@media (max-width: 767px) {
+  .experience-section .section-title {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .section-title {
+    margin: 0 auto 40px;
+    text-align: center;
+  }
+
+  .experience-list::before {
+    left: calc(14px);
+    transform: none;
+  }
+}
