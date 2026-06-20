@@ -1,0 +1,23 @@
+.footer {
+  height: 12rem;
+  width: 100%;
+  background-color: var(--tertiary-10);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+p.developped-by {
+  color: var(--dark);
+  height: 2rem;
+  margin: 5rem 0 10rem 0;
+  font-style: italic;
+}
+
+@media (max-width: 767px) {
+  .footer {
+    width: 101%;
+    height: 12rem;
+  }
+}

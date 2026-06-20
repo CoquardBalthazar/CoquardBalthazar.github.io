@@ -5,7 +5,7 @@ import Skills from './components/Skills'
 import Experience from './components/Experiences'
 import Work from './components/Work'
 import Contact from './components/Contact'
-// import Footer from './components/Footer'
+import Footer from './components/Footer'
 import ReturnToTop from './components/ReturnToTop'
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
       <Experience />
       <Work />
       <Contact />
-      {/* <Footer /> */}
+      <Footer />
       <ReturnToTop />
     </>
   )
