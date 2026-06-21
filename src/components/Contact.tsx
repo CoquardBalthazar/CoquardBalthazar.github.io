@@ -11,6 +11,17 @@ function Contact() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>(
     'idle',
   )
+  const [copied, setCopied] = useState(false)
+
+  function handleEmailClick() {
+    navigator.clipboard
+      ?.writeText('balthazarcoquard.de@gmail.com')
+      .then(() => {
+        setCopied(true)
+        setTimeout(() => setCopied(false), 2000)
+      })
+      .catch(() => {})
+  }
 
   function handleSubmit(e: React.SyntheticEvent) {
     e.preventDefault()
@@ -113,7 +124,10 @@ function Contact() {
             <a
               href="mailto:balthazarcoquard.de@gmail.com"
               className="fa fa-google"
+              title="balthazarcoquard.de@gmail.com"
+              onClick={handleEmailClick}
             ></a>
+            {copied && <span className="email-copied-toast">Email copied!</span>}
           </div>
         </div>
       </div>
