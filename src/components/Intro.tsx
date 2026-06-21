@@ -31,7 +31,7 @@ function Intro() {
               className="fa fa-github"
             ></a>
             <a
-              href="mailto:balthazar.coquard@gmail.com"
+              href="mailto:balthazarcoquard.de@gmail.com"
               className="fa fa-google"
             ></a>
           </div>

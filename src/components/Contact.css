@@ -3,7 +3,7 @@ section#contact {
 }
 
 .contact.div-bg-yellow {
-  height: 65rem;
+  min-height: 65rem;
   padding: 3% 0 0 0;
   width: 100%;
   display: flex;
@@ -160,7 +160,7 @@ p.email {
 /* Tablet (768px <= 1023) */
 @media (min-width: 768px) and (max-width: 1023px) {
   .contact.div-bg-yellow {
-    height: 65rem;
+    min-height: 65rem;
     padding: 0 0 3rem 0;
   }
 }
@@ -168,7 +168,7 @@ p.email {
 /* Mobile (≤767px) */
 @media (max-width: 767px) {
   .contact.div-bg-yellow {
-    height: 110rem;
+    min-height: 110rem;
     padding: 0 0 5rem 0;
     width: 100%;
     display: flex;

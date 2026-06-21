@@ -65,6 +65,6 @@ Description: Use of Microsoft Power Apps, Power Automate, Sharepoint, ... to aut
 
 ## Contact
 
-- [Email](mailto:balthazar.coquard@gmail.com)
+- [Email](mailto:balthazarcoquard.de@gmail.com)
 - [LinkedIn](https://www.linkedin.com/in/balthazar-coquard/)
 - [GitHub](https://github.com/BalthazarCoq)
