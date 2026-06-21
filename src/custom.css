@@ -629,3 +629,22 @@ span.category {
   }
 
 }
+
+.email-copied-toast {
+  align-self: center;
+  background-color: var(--dark);
+  color: var(--light);
+  font-size: 1.3rem;
+  padding: 0.4rem 1.2rem;
+  border-radius: 2rem;
+  border: 1px solid var(--blurry);
+  white-space: nowrap;
+  animation: fade-in-out 2s ease forwards;
+}
+
+@keyframes fade-in-out {
+  0%   { opacity: 0; transform: translateY(-4px); }
+  15%  { opacity: 1; transform: translateY(0); }
+  75%  { opacity: 1; }
+  100% { opacity: 0; }
+}
