@@ -30,6 +30,21 @@
     "visible": true
   },
   {
+    "id": "cpp-boardgame",
+    "title": "Board Game",
+    "category": "C++",
+    "tags": ["C++", "OOP"],
+    "year": 2025,
+    "description": "A board game built in C++, using classes to model the board, players, and turn-based gameplay.",
+    "wip": null,
+    "live": true,
+    "code": "https://github.com/CoquardBalthazar/cpp_p2_boardgame",
+    "demo": null,
+    "screenshot": null,
+    "featured": false,
+    "visible": true
+  },
+  {
     "id": "blackjack",
     "title": "Blackjack",
     "category": "Python",

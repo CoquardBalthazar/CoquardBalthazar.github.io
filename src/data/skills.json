@@ -1,31 +1,214 @@
 [
-  { "id": "python",         "title": "Python",           "tier": "production",  "category": "languages",           "categoryLabel": "Languages",        "icon": null, "visible": true },
-  { "id": "r",              "title": "R",                "tier": "production",  "category": "languages",           "categoryLabel": "Languages",        "icon": null, "visible": true },
-  { "id": "sql",            "title": "SQL",              "tier": "production",  "category": "languages",           "categoryLabel": "Languages",        "icon": null, "visible": true },
-  { "id": "javascript",     "title": "JavaScript",       "tier": "proficient",  "category": "languages",           "categoryLabel": "Languages",        "icon": null, "visible": true },
-  { "id": "html-css",       "title": "HTML / CSS",       "tier": "proficient",  "category": "languages",           "categoryLabel": "Languages",        "icon": null, "visible": true },
-  { "id": "cpp",            "title": "C++",              "tier": "comfortable", "category": "languages",           "categoryLabel": "Languages",        "icon": null, "visible": true },
-  { "id": "java",           "title": "Java",             "tier": "comfortable", "category": "languages",           "categoryLabel": "Languages",        "icon": null, "visible": true },
+  {
+    "id": "python",
+    "title": "Python",
+    "tier": "production",
+    "category": "languages",
+    "categoryLabel": "Languages",
+    "icon": null,
+    "visible": true
+  },
+  {
+    "id": "r",
+    "title": "R",
+    "tier": "production",
+    "category": "languages",
+    "categoryLabel": "Languages",
+    "icon": null,
+    "visible": true
+  },
+  {
+    "id": "sql",
+    "title": "SQL",
+    "tier": "production",
+    "category": "languages",
+    "categoryLabel": "Languages",
+    "icon": null,
+    "visible": true
+  },
+  {
+    "id": "javascript",
+    "title": "JavaScript",
+    "tier": "proficient",
+    "category": "languages",
+    "categoryLabel": "Languages",
+    "icon": null,
+    "visible": true
+  },
+  {
+    "id": "cpp",
+    "title": "C++",
+    "tier": "comfortable",
+    "category": "languages",
+    "categoryLabel": "Languages",
+    "icon": null,
+    "visible": true
+  },
+  {
+    "id": "java",
+    "title": "Java",
+    "tier": "comfortable",
+    "category": "languages",
+    "categoryLabel": "Languages",
+    "icon": null,
+    "visible": true
+  },
 
-  { "id": "pyspark",        "title": "PySpark",          "tier": "production",  "category": "data-ml",             "categoryLabel": "Data & ML",        "icon": null, "visible": true },
-  { "id": "databricks",     "title": "Databricks",       "tier": "production",  "category": "data-ml",             "categoryLabel": "Data & ML",        "icon": null, "visible": true },
+  {
+    "id": "pyspark",
+    "title": "PySpark",
+    "tier": "production",
+    "category": "data-ml",
+    "categoryLabel": "Data & ML",
+    "icon": null,
+    "visible": true
+  },
+  {
+    "id": "databricks",
+    "title": "Databricks",
+    "tier": "production",
+    "category": "data-ml",
+    "categoryLabel": "Data & ML",
+    "icon": null,
+    "visible": true
+  },
 
-  { "id": "azure-devops",   "title": "Azure DevOps",     "tier": "production",  "category": "devops-infrastructure","categoryLabel": "Infra & DevOps",  "icon": null, "visible": true },
-  { "id": "linux",          "title": "Linux / WSL",      "tier": "production",  "category": "devops-infrastructure","categoryLabel": "Infra & DevOps",  "icon": null, "visible": true },
-  { "id": "jfrog",          "title": "JFrog Artifactory","tier": "production",  "category": "devops-infrastructure","categoryLabel": "Infra & DevOps",  "icon": null, "visible": true },
-  { "id": "github-actions", "title": "GitHub Actions",   "tier": "proficient",  "category": "devops-infrastructure","categoryLabel": "Infra & DevOps",  "icon": null, "visible": true },
-  { "id": "docker",         "title": "Docker",           "tier": "learning",    "category": "devops-infrastructure","categoryLabel": "Infra & DevOps",  "icon": null, "visible": true },
+  {
+    "id": "azure-devops",
+    "title": "Azure DevOps",
+    "tier": "production",
+    "category": "devops-infrastructure",
+    "categoryLabel": "Infra & DevOps",
+    "icon": null,
+    "visible": true
+  },
+  {
+    "id": "linux",
+    "title": "Linux / WSL",
+    "tier": "production",
+    "category": "devops-infrastructure",
+    "categoryLabel": "Infra & DevOps",
+    "icon": null,
+    "visible": true
+  },
+  {
+    "id": "jfrog",
+    "title": "JFrog Artifactory",
+    "tier": "production",
+    "category": "devops-infrastructure",
+    "categoryLabel": "Infra & DevOps",
+    "icon": null,
+    "visible": true
+  },
+  {
+    "id": "github-actions",
+    "title": "GitHub Actions",
+    "tier": "proficient",
+    "category": "devops-infrastructure",
+    "categoryLabel": "Infra & DevOps",
+    "icon": null,
+    "visible": true
+  },
+  {
+    "id": "docker",
+    "title": "Docker",
+    "tier": "learning",
+    "category": "devops-infrastructure",
+    "categoryLabel": "Infra & DevOps",
+    "icon": null,
+    "visible": true
+  },
 
-  { "id": "git",            "title": "Git",              "tier": "production",  "category": "tools-workflow",      "categoryLabel": "Tools & Workflow", "icon": null, "visible": true },
-  { "id": "pytest",         "title": "Pytest",           "tier": "production",  "category": "tools-workflow",      "categoryLabel": "Tools & Workflow", "icon": null, "visible": true },
-  { "id": "unittest",       "title": "Unittest",         "tier": "production",  "category": "tools-workflow",      "categoryLabel": "Tools & Workflow", "icon": null, "visible": true },
-  { "id": "tox",            "title": "Tox",              "tier": "production",  "category": "tools-workflow",      "categoryLabel": "Tools & Workflow", "icon": null, "visible": true },
-  { "id": "sphinx",         "title": "Sphinx",           "tier": "production",  "category": "tools-workflow",      "categoryLabel": "Tools & Workflow", "icon": null, "visible": true },
+  {
+    "id": "git",
+    "title": "Git",
+    "tier": "production",
+    "category": "tools-workflow",
+    "categoryLabel": "Tools & Workflow",
+    "icon": null,
+    "visible": true
+  },
+  {
+    "id": "pytest",
+    "title": "Pytest",
+    "tier": "production",
+    "category": "tools-workflow",
+    "categoryLabel": "Tools & Workflow",
+    "icon": null,
+    "visible": true
+  },
+  {
+    "id": "unittest",
+    "title": "Unittest",
+    "tier": "production",
+    "category": "tools-workflow",
+    "categoryLabel": "Tools & Workflow",
+    "icon": null,
+    "visible": true
+  },
+  {
+    "id": "tox",
+    "title": "Tox",
+    "tier": "production",
+    "category": "tools-workflow",
+    "categoryLabel": "Tools & Workflow",
+    "icon": null,
+    "visible": true
+  },
+  {
+    "id": "sphinx",
+    "title": "Sphinx",
+    "tier": "production",
+    "category": "tools-workflow",
+    "categoryLabel": "Tools & Workflow",
+    "icon": null,
+    "visible": true
+  },
 
-  { "id": "powerapps",      "title": "Power Apps",       "tier": "proficient",  "category": "frameworks-libraries","categoryLabel": "Frameworks & Libs","icon": null, "visible": true },
-  { "id": "react",          "title": "React",            "tier": "learning",    "category": "frameworks-libraries","categoryLabel": "Frameworks & Libs","icon": null, "visible": true },
-  { "id": "node",           "title": "Node.js",          "tier": "learning",    "category": "frameworks-libraries","categoryLabel": "Frameworks & Libs","icon": null, "visible": true },
-  { "id": "threejs",        "title": "Three.js",         "tier": "learning",    "category": "frameworks-libraries","categoryLabel": "Frameworks & Libs","icon": null, "visible": true },
+  {
+    "id": "powerapps",
+    "title": "Power Apps",
+    "tier": "proficient",
+    "category": "frameworks-libraries",
+    "categoryLabel": "Frameworks & Libs",
+    "icon": null,
+    "visible": true
+  },
+  {
+    "id": "react",
+    "title": "React",
+    "tier": "learning",
+    "category": "frameworks-libraries",
+    "categoryLabel": "Frameworks & Libs",
+    "icon": null,
+    "visible": true
+  },
+  {
+    "id": "node",
+    "title": "Node.js",
+    "tier": "learning",
+    "category": "frameworks-libraries",
+    "categoryLabel": "Frameworks & Libs",
+    "icon": null,
+    "visible": true
+  },
+  {
+    "id": "threejs",
+    "title": "Three.js",
+    "tier": "learning",
+    "category": "frameworks-libraries",
+    "categoryLabel": "Frameworks & Libs",
+    "icon": null,
+    "visible": true
+  },
 
-  { "id": "postgresql",     "title": "PostgreSQL",       "tier": "comfortable", "category": "databases",           "categoryLabel": "Databases",        "icon": null, "visible": true }
+  {
+    "id": "postgresql",
+    "title": "PostgreSQL",
+    "tier": "comfortable",
+    "category": "databases",
+    "categoryLabel": "Databases",
+    "icon": null,
+    "visible": true
+  }
 ]

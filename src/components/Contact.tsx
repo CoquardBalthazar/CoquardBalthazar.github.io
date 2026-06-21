@@ -96,7 +96,7 @@ function Contact() {
               className="img-bear"
             />
           </div>
-          <p className="email">balthazar.coquard@gmail.com</p>
+          <p className="email">balthazarcoquard.de@gmail.com</p>
           <div className="contact social-media-control">
             <a
               href="https://www.linkedin.com/in/balthazar-coquard/"
@@ -111,7 +111,7 @@ function Contact() {
               className="fa fa-github"
             ></a>
             <a
-              href="mailto:balthazar.coquard@gmail.com"
+              href="mailto:balthazarcoquard.de@gmail.com"
               className="fa fa-google"
             ></a>
           </div>
