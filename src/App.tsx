@@ -1,5 +1,6 @@
 import Header from './components/Header'
 import Intro from './components/Intro'
+import ThreeDemo from './components/ThreeDemo'
 import AboutMe from './components/AboutMe'
 import Skills from './components/Skills'
 import Experience from './components/Experiences'
@@ -13,6 +14,7 @@ function App() {
     <>
       <Header />
       <Intro />
+      <ThreeDemo />
       <AboutMe />
       <Skills />
       <Experience />

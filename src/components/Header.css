@@ -160,4 +160,16 @@ a.boxhead:active {
   .navbar-ctrl-items.show {
     display: flex;
   }
+
+  .navbar-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: -10rem; /* pull links closer to CLOSE */
+  }
+
+  .navbar-ctrl-items .btn-lets-talk {
+    margin-top: 7rem; /* bigger gap before Let's talk */
+  }
 }
