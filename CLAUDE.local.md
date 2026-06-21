@@ -16,6 +16,9 @@
 - broken : nothing currently broken
 - in progress : styling pass, top-to-bottom through `App.tsx`. Header + Intro + AboutMe + Skills + Experience + Work/Projects
   all done (desktop). Next up: **HackathonCard + GameCard desktop styling pass**, then **mobile/tablet CSS for all three card types**.
+- EmailJS fix : env vars now injected via GitHub Actions secrets (VITE_EMAILJS_SERVICE_ID,
+  VITE_EMAILJS_TEMPLATE_ID, VITE_EMAILJS_PUBLIC_KEY) — deploy.yml already updated, secrets
+  must be added manually in GitHub repo settings → Secrets and variables → Actions.
 
 ### Skills section — DONE (2026-06-16)
 - `SkillCard.tsx` + `SkillCard.css`: one card per category, bracket motif (`<h3>`/`</h3>`),
