@@ -102,7 +102,7 @@ export default function ThreeDemo() {
       onMouseEnter={() => setHovering(true)}
       onMouseLeave={() => setHovering(false)}
     >
-      <Canvas camera={{ position: [0, 0, 6], fov: 60 }}>
+      <Canvas camera={{ position: [0, 0, 7], fov: 60 }}>
         <ambientLight intensity={0.4} />
         <directionalLight position={[5, 5, 5]} intensity={1.7} />
         <directionalLight

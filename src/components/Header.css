@@ -52,6 +52,12 @@ a.boxhead:active {
   ); /* Adjust based on the width of .navbar-ctrl-brand */
 }
 
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .navbar-item {
   font-family: inherit;
   min-width: 12rem;
