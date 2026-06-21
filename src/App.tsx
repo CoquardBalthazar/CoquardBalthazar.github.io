@@ -1,7 +1,9 @@
+import { lazy, Suspense } from 'react'
 import Header from './components/Header'
 import Intro from './components/Intro'
-import ThreeDemo from './components/ThreeDemo'
 import AboutMe from './components/AboutMe'
+
+const ThreeDemo = lazy(() => import('./components/ThreeDemo'))
 import Skills from './components/Skills'
 import Experience from './components/Experiences'
 import Work from './components/Work'
@@ -14,7 +16,9 @@ function App() {
     <>
       <Header />
       <Intro />
-      <ThreeDemo />
+      <Suspense fallback={<div style={{ height: '60vh', background: 'var(--dark)' }} />}>
+        <ThreeDemo />
+      </Suspense>
       <AboutMe />
       <Skills />
       <Experience />
