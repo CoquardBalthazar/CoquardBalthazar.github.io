@@ -114,21 +114,38 @@ breakpoint tweaks — same pattern as wallofportfolios.in/portfolios/val-nogues.
 - [ ] Hamburger menu polish (desktop nav, separate from the mobile tab bar)
 - [ ] Test on real device
 
-### Phase 5 — Three.js inline demo (2–4h)
+### Phase 5 — Three.js inline demo ✅ DONE (2026-06-21)
 
-- [ ] Add `@react-three/fiber` and `three`
-- [ ] One scene embedded as a section: rotating mesh or simple interactive geometry — even small reads as "exploring XR"
-- [ ] Placement: new section **directly before Projects, right after About Me** (per
-      2026-06-13 discussion) — `<AboutMe> → <ThreeDemo> → <Projects>`
-- [ ] Treat as the start of the WebXR learning path, not the destination
+- [x] Install `three`, `@react-three/fiber`, `@react-three/drei`, `@types/three`
+- [x] `ThreeDemo.tsx` + `ThreeDemo.css` — full-width dark section, 60vh
+- [x] 3 shapes in triangle layout: pink cone (top), blue cube (bottom-left, corner-up), yellow sphere (bottom-right)
+- [x] Per-shape hover: spins faster on its own axis (`meshPhongMaterial` for depth + vivid color)
+- [x] Group rotation: lerp-based velocity kick on mouse enter, smooth decay on leave
+- [x] Wired into `App.tsx` between `<Intro>` and `<AboutMe>`
 
-**Learning outcome:** first contact with Three.js / r3f.
+**Learning outcome:** first contact with Three.js / r3f, useFrame, useRef mutation, lerp.
 
-### Phase 6 — Contact form via EmailJS (1h)
+### Phase 6 — Polish & remaining todos (est. 2–3h)
 
+#### Contact form via EmailJS
 - [ ] Sign up for EmailJS free tier
 - [ ] Wire up the existing form to the endpoint
 - [ ] Confirm a test message arrives
+
+#### Email icon — cross-platform popover (mobile UX)
+- [ ] Replace `mailto:` anchor on the email icon (Intro + Contact) with a click-triggered
+      `<EmailPopover>` component
+- [ ] Popover options: "Open email app" (`mailto:`), Gmail (web compose URL),
+      Outlook (web compose URL), "Copy address" (clipboard API)
+- [ ] Handles iOS edge case where no email app is set — user picks web client instead
+
+#### Games tab — mobile/tablet responsiveness
+- [ ] `GameCard` mobile layout: single-column, stacked panels (same pattern as ProjectCard mobile pass)
+- [ ] Test on real device
+
+#### Projects — "Play" → "Demo" button rename
+- [ ] `btn-play` asset already renamed to `btn-demo.svg` / `btn-demo-hover.svg`
+- [ ] Audit `ProjectCard.tsx` and `GameCard.tsx` for any remaining "play" references and update
 
 ---
 
