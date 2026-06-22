@@ -3,7 +3,7 @@
 .project-list {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
 }
 
@@ -137,6 +137,13 @@
 .project-card-actions .btn-demo-container {
   position: static;
   transform: none;
+}
+
+/* Large tablet Tablet — stack panels vertically, no sticky yet */
+@media (min-width: 1023px) and (max-width: 1100px) {
+  .project-list {
+    width: 80%;
+  }
 }
 
 /* Tablet — stack panels vertically, no sticky yet */
