@@ -1,0 +1,48 @@
+.email-popover-wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+.email-popover-trigger {
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.email-popover {
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--dark);
+  border: 1px solid var(--quaternary-60);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 14rem;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.email-popover-option {
+  padding: 0.75rem 1.25rem;
+  font-family: 'FiraCode', monospace;
+  font-size: 0.9rem;
+  color: var(--light);
+  background: none;
+  border: none;
+  text-decoration: none;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+
+.email-popover-option:not(:last-child) {
+  border-bottom: 1px solid var(--quaternary-60);
+}
+
+.email-popover-option:hover {
+  background: var(--quaternary-60);
+  color: var(--dark);
+}
