@@ -1,19 +1,7 @@
-import { useState } from 'react'
+import EmailPopover from './EmailPopover'
 import './Intro.css'
 
 function Intro() {
-  const [copied, setCopied] = useState(false)
-
-  function handleEmailClick() {
-    navigator.clipboard
-      ?.writeText('balthazarcoquard.de@gmail.com')
-      .then(() => {
-        setCopied(true)
-        setTimeout(() => setCopied(false), 2000)
-      })
-      .catch(() => {})
-  }
-
   return (
     <section id="introduction">
       <div className="introduction control">
@@ -43,13 +31,7 @@ function Intro() {
               rel="noopener noreferrer"
               className="fa fa-github"
             ></a>
-            <a
-              href="mailto:balthazarcoquard.de@gmail.com"
-              className="fa fa-google"
-              title="balthazarcoquard.de@gmail.com"
-              onClick={handleEmailClick}
-            ></a>
-            {copied && <span className="email-copied-toast">Email copied!</span>}
+            <EmailPopover />
           </div>
           <a
             href="/assets/cv.pdf"

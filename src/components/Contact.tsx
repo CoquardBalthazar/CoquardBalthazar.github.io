@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 import emailjs from '@emailjs/browser'
+import EmailPopover from './EmailPopover'
 import './Contact.css'
 
 const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string
@@ -11,18 +12,6 @@ function Contact() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>(
     'idle',
   )
-  const [copied, setCopied] = useState(false)
-
-  function handleEmailClick() {
-    navigator.clipboard
-      ?.writeText('balthazarcoquard.de@gmail.com')
-      .then(() => {
-        setCopied(true)
-        setTimeout(() => setCopied(false), 2000)
-      })
-      .catch(() => {})
-  }
-
   function handleSubmit(e: React.SyntheticEvent) {
     e.preventDefault()
     if (!formRef.current) return
@@ -42,6 +31,7 @@ function Contact() {
   return (
     <section id="contact">
       <div className="contact div-bg-yellow">
+        {' '}
         <div className="contact div-form">
           <h2 className="contact">## Contact me</h2>
           <p className="contact">
@@ -121,13 +111,7 @@ function Contact() {
               rel="noopener noreferrer"
               className="fa fa-github"
             ></a>
-            <a
-              href="mailto:balthazarcoquard.de@gmail.com"
-              className="fa fa-google"
-              title="balthazarcoquard.de@gmail.com"
-              onClick={handleEmailClick}
-            ></a>
-            {copied && <span className="email-copied-toast">Email copied!</span>}
+            <EmailPopover />
           </div>
         </div>
       </div>

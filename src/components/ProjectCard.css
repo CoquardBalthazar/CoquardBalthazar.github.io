@@ -134,7 +134,8 @@
 }
 
 /* Demo button container */
-.project-card-actions .btn-demo-container {
+.project-card-actions .btn-demo-container,
+.project-card-actions .btn-play-container {
   position: static;
   transform: none;
 }
