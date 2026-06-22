@@ -37,9 +37,10 @@ function EmailPopover() {
       <button
         className="fa fa-google email-popover-trigger"
         title={EMAIL}
+        onMouseDown={(e) => e.stopPropagation()}
         onClick={() => setOpen((o) => !o)}
         aria-label="Email options"
-      />
+      ></button>
       {open && (
         <div className="email-popover">
           <a
