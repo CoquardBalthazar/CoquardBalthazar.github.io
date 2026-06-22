@@ -67,7 +67,7 @@ body {
   margin: 5rem;
 }
 .custom-cursor {
-  cursor: url('/assets/custom-cursor-pointer.svg'), pointer;
+  cursor: url('/assets/cursor-pointer.svg'), pointer;
 }
 
 h1 {
@@ -146,7 +146,7 @@ p {
 
 .fa:hover {
   opacity: 0.7;
-  cursor: url('/assets/custom-cursor-paw-select.svg'), pointer;
+  cursor: url('/assets/cursor-paw-select.svg'), pointer;
 }
 .fa-linkedin {
   background: #0e76a8;
@@ -352,7 +352,7 @@ p.skill {
   padding-top: 4rem;
 }
 
-.btn-demo-container {
+.btn-play-container {
   width: 10rem;
   height: calc(10rem * 0.4047); /*height-per-width ratio of the original image*/
   border: none;
@@ -362,13 +362,45 @@ p.skill {
   left: 50%;
   transform: translate(-50%, -50%); /* Center the child */
 }
-.btn-demo-link {
+.btn-play-link {
   display: inline-block;
   text-decoration: none; /* Remove underline */
   color: #333; /* Link text color */
   text-align: center;
   transition: transform 0.2s ease-in-out; /* Smooth animation */
-  cursor: url('/assets/custom-cursor-paw-select.svg'), pointer;
+  cursor: url('/assets/cursor-paw-select.svg'), pointer;
+}
+
+.btn-play {
+  background-image: url('/assets/btn-play.svg');
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.btn-play:hover {
+  background-image: url('/assets/btn-play-hover.svg');
+}
+
+.btn-play:active {
+  background-image: url('/assets/btn-play.svg');
+}
+
+.btn-demo-container {
+  width: 10rem;
+  height: calc(10rem * 0.4047);
+  border: none;
+  overflow: hidden;
+  position: static;
+}
+
+.btn-demo-link {
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+  cursor: url('/assets/cursor-paw-select.svg'), pointer;
 }
 
 .btn-demo {
@@ -378,6 +410,7 @@ p.skill {
   background-size: cover;
   background-position: center;
 }
+
 .btn-demo:hover {
   background-image: url('/assets/btn-demo-hover.svg');
 }
@@ -512,14 +545,13 @@ span.category {
   border-radius: 0 0 0.75rem 0.75rem;
 }
 
-
 #return-to-top {
   position: fixed;
   bottom: 3rem;
   right: 3rem;
   width: 5rem;
   height: 4rem;
-  cursor: url('/assets/custom-cursor-paw-select.svg'), pointer;
+  cursor: url('/assets/cursor-paw-select.svg'), pointer;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -627,7 +659,6 @@ span.category {
     text-align: center;
     padding-top: 4rem;
   }
-
 }
 
 .email-copied-toast {
@@ -643,8 +674,18 @@ span.category {
 }
 
 @keyframes fade-in-out {
-  0%   { opacity: 0; transform: translateY(-4px); }
-  15%  { opacity: 1; transform: translateY(0); }
-  75%  { opacity: 1; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  15% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }

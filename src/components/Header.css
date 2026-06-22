@@ -26,7 +26,7 @@ header {
 .boxhead {
   color: var(--light);
   text-decoration: none;
-  cursor: url('/assets/custom-cursor-paw-select.svg'), pointer;
+  cursor: url('/assets/cursor-paw-select.svg'), pointer;
 }
 a.boxhead:hover {
   color: var(--primary-30);

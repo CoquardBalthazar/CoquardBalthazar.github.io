@@ -39,10 +39,10 @@ function GameCard({ game, theme }: { game: Game; theme: Theme }) {
               href={game.demo}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-demo-link"
+              className="btn-play-link"
             >
-              <div className="btn-demo-container">
-                <div className="btn-demo"></div>
+              <div className="btn-play-container">
+                <div className="btn-play"></div>
               </div>
             </a>
           )}

@@ -46,7 +46,7 @@ Direct and blunt. If my code is wrong or my approach is bad, say so clearly. No 
 
 ## Current phase
 
-See PLAN.md for the full phased plan. Always check which phase is active before starting a task.
+See `20260622_PLAN_refactor2026.md` for the full phased plan. Always check which phase is active before starting a task.
 Recommended order: README update → Phase 1 → Phase 2 → Phase 3 → Phase 4 → Phase 5 → Phase 6.
 
 ## Project structure (target, post-migration)
@@ -60,7 +60,7 @@ workflows/
 deploy.yml # vite build → dist/ → gh-pages branch
 CLAUDE.md
 CLAUDE.local.md # gitignored — local paths and personal notes
-PLAN.md # the phased build plan
+20260622_PLAN_refactor2026.md # the phased build plan
 
 ## Key constraints
 
