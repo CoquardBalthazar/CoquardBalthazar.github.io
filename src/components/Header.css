@@ -165,6 +165,7 @@ a.boxhead:active {
 
   .navbar-ctrl-items.show {
     display: flex;
+    z-index: 9999;
   }
 
   .navbar-links {
