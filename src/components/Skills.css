@@ -50,7 +50,7 @@
 }
 
 /* ── Tablet (768–1023px) ──────────────────────────────── */
-@media (max-width: 1023px) and (min-width: 768px) {
+@media (max-width: 1024px) and (min-width: 768px) {
   .skills-section {
     padding: 4rem 3rem 8rem;
   }

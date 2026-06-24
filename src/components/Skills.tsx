@@ -44,7 +44,7 @@ function groupByCategory(skills: Skill[]): CategoryGroup[] {
 function useVisibleCount(): number {
   const getCount = () => {
     if (window.innerWidth <= 767) return 1
-    if (window.innerWidth <= 1023) return 2
+    if (window.innerWidth <= 1024) return 2
     return 3
   }
   const [visibleCount, setVisibleCount] = useState(getCount)
