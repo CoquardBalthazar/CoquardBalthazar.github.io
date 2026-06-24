@@ -35,7 +35,8 @@ function Contact() {
         <div className="contact div-form">
           <h2 className="contact">## Contact me</h2>
           <p className="contact">
-            To meet for a walk or just to say hello, my inbox is open to all :
+            Whether it's a coffee, a walk, or just a hi — feel free to reach out
+            :
           </p>
           <form
             id="contact-form"

@@ -9,7 +9,7 @@ function AboutMe() {
           <p className="font-dark">
             French student based in Munich. I speak{' '}
             <span className="highlight-box-shadow">
-              [French, English, German and Spanish]
+              [French, English and German]
             </span>{' '}
             — and I find that working across cultures makes you a better
             engineer.
